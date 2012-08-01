@@ -1,0 +1,202 @@
+<html>
+
+	<head>
+		<title>Have a break,Have a GitHub</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link href="./css/base.css" rel="stylesheet" type="text/css" />
+		<script src="./js/jquery-1.7.2.min.js"></script>
+		<script src="./js/jmpress.min.js"></script>
+		<script src="./js/base.js"></script>
+	</head>
+	<body>
+
+		<div id="jmpress" data-template="auto">
+			<section class="step">
+				<h1 class="title">まぁ落ち着いてGitにしようじゃないか</h1>
+				Have a break,Have a Git(Hub).
+
+				静岡Developers勉強会 GIｔHubハンズオン
+				へびしま
+			</section>
+			
+			<section class="step">
+				<h1 class="title">自己紹介</h1>
+				secondarykey
+				programer
+			</section>
+
+			<section class="step">
+				<h1 class="title">Agenda</h1>
+				
+				Gitについて
+				
+				環境確認
+
+				Gitを触ってみよう：ハンズオン
+				
+				みなさんのソース管理状況
+				
+				ブランチとタグの考え方について
+				
+				リリースとタグを覚えよう：ハンズオン
+
+				Gitがなぜ生まれたか	
+
+				集中管理の問題点
+				
+				リモートにアクセスしてみよう	
+
+			</section>
+
+			<section class="step">
+				<h1 class="title">Gitについて</h1>
+				gitのこと
+			</section>
+			
+			<section class="step">
+				<h1 class="title">環境確認</h1>
+				Gitのインストール状況
+				OSの確認
+				IDE何使っているかも聞いておこうかな？
+			</section>
+
+			<section class="step" id="handson">
+				<h1 class="title">基本操作：ハンズオン</h1>
+				それではGitを触ってみましょう
+				<section class="step" id="handson-nested">
+					<h1 class="title">git --version</h1>
+					バージョンを確認
+				</section>
+				
+				<section class="step" id="handson-nested">
+					<h1 class="title">git config</h1>
+					--list
+				</section>
+	
+				<section class="step" id="handson-nested">
+					<h1 class="title">git init</h1>
+					フォルダを作る
+					.gitの確認
+					masterの説明
+				</section>			
+	
+				<section class="step" id="handson-nested">
+					<h1 class="title">git add</h1>
+					ファイルを作る
+					登録する
+				</section>
+					
+				<section class="step" id="handson-nested">
+					<h1 class="title">git status</h1>
+					ステータスの表示を教える
+					※常にstatusを見る
+				</section>	
+				<section class="step" id="handson-nested">
+					<h1 class="title">git commit</h1>
+					コミットを行う
+					コメントについて
+					-a
+				</section>	
+	
+				<section class="step" id="handson-nested">
+					<h1 class="title">git log</h1>
+					--prety=oneline
+					formatでもいいかな、、、
+				</section>	
+			</section>
+
+			<section class="step">
+				<h1 class="title">tips</h1>
+				ファイルの無視
+				ファイルのコピーについて
+			</section>
+
+			<section class="step">
+				<h1 class="title">ソースの管理状況</h1>
+				SCM,VCSでソース管理しているか？
+				どの製品を使っているか？
+				バージョン管理(ブランチ、タグを多用)しているか？
+			</section>
+			
+			<section class="step">
+				<h1 class="title">ブランチとタグの考え方</h1>
+			</section>
+			
+			<section class="step">
+				<h1 class="title">ブランチとタグ：ハンズオン</h1>
+				それではブランチとタグを操作して見ましょう
+
+				<section class="step" id="handson-nested">
+					<h1 class="title">git branch</h1>
+				</section>
+	
+				<section class="step" id="handson-nested">
+					<h1 class="title">git checkout</h1>
+				</section>
+				
+				<section class="step" id="handson-nested">
+					<h1 class="title">git tag</h1>
+					タグを打つのはどこからかはプロジェクト次第
+				</section>
+	
+				<section class="step" id="handson-nested">
+					<h1 class="title">git rebase</h1>
+				</section>
+
+			</section>
+
+			<section class="step">
+				<h1 class="title">tips</h1>
+				アーカイブする
+				サブモジュール化
+			</section>
+
+			<section class="step">
+				<h1 class="title">さてここで分散の良さ</h1>
+				今までの部分は自分のローカルコミット
+				ここからがリモートに対する操作
+			</section>
+	
+			<section class="step">
+				<h1 class="title">リモートアクセス：ハンズオン</h1>
+				リモートに対してアクセスしてみましょう
+				※ハンズオンにするべきか悩み中
+
+				<section class="step">
+					<h1 class="title">git remote add</h1>
+				</section>
+				
+				<section class="step">
+					<h1 class="title">git push</h1>
+				</section>
+				
+				<section class="step">
+					<h1 class="title">git pull</h1>
+				</section>
+				
+				<section class="step">
+					<h1 class="title">git clone</h1>
+				</section>
+
+			</section>
+			
+			<section class="step">
+				<h1 class="title">tips</h1>
+				コンフリクトした場合
+			</section>
+
+			<section class="step">
+				<h1 class="title">これでgitの基本コマンドはOK！</h1>
+				gui周りの説明
+				分散の場合のアグレッシブな使い方
+			</section>
+
+			<section class="step">
+				<h1 class="title">ご清聴ありがごとうございました。</h1>
+				参考文献
+			</section>
+
+		</div>
+
+	</body>
+</html>
