@@ -12,8 +12,8 @@ $(function() {
 		});
 
 		$('#jmpress').jmpress({
-			stepSelector: 'section'		,hash: { use: false }
-
+			stepSelector: 'section'	,
+			hash: { use: false }
 		});
 	});
 });
