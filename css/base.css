@@ -5,20 +5,27 @@ body {
 	background-color: #ddd;
 }
 
-ol, ul {
-	list-style: none;
+
+#jmpress {
+	opacity: 1;
+
+	-webkit-transition: 0.5s;
+	-moz-transition:    0.5s;
+	-ms-transition:     0.5s;
+	-o-transition:      0.5s;
+	transition:         0.5s;
 }
 
 /** STEP STYLES **/
 section {
+	white-space : pre;
 	width: 900px;
-    height: 500px;
-	font-size: 1em;
+    height: 600px;
+	font-size: 28px;
 	min-height: 500px;
 	background-color: white;
 
 	display: block;
-    padding: 40px 60px;
     border-radius: 10px;
 
     box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
@@ -40,6 +47,57 @@ section {
 	-ms-transition:     opacity 1s;
 	-o-transition:      opacity 1s;
 	transition:         opacity 1s;
+}
+
+h1 {
+	display:inline;
+	font-size: 48px;
+	text-shadow: #999 -1px 2px 2px;
+}
+
+h2 {
+	display:inline;
+	font-size: 32px;
+    color: #aaa;
+}
+
+.code {
+}
+
+.terminal {
+}
+
+div.notes {
+	font-size: 20px;
+    color: #a00;
+}
+
+ul {
+	white-space : normal;
+	list-style-type: square;
+	margin-left: 50px;
+	font-size: 32px;
+}
+
+li {
+	margin-bottom: 10px;
+	font-size: 32px;
+}
+
+ul.image {
+	white-space : normal;
+	font-size: 24px;
+}
+
+ul.image li {
+	margin-bottom: 10px;
+	font-size: 24px;
+}
+
+img {
+	padding:20 0 0 50;
+	float: left;
+    margin-right:40px;
 }
 
 /** NOT SUPPORTED STYLES **/
@@ -151,35 +209,11 @@ section {
 	font-size: 22px;
 }
 
-h1 {
-	font-size: 48px;
-	margin-bottom: 10px;
-	text-shadow: #333 -2px 2px 3px;
-}
-
-#jmpress {
-	opacity: 1;
-
-	-webkit-transition: 0.5s;
-	-moz-transition:    0.5s;
-	-ms-transition:     0.5s;
-	-o-transition:      0.5s;
-	transition:         0.5s;
-}
-
-
 .step:not(.active):not(.nested-active) {
 	z-index: 1;
 	opacity: 0.3;
 }
-.step ul {
-	margin-left: 20px;
-}
 
-.step ul li {
-	list-style: disc;
-	font-size: 20px;
-}
 
 .step:not(.active):not(.init-css) .intro-top {
 	margin-top: -1500px;
