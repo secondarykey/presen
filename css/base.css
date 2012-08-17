@@ -49,29 +49,51 @@ section {
 	transition:         opacity 1s;
 }
 
+/** タイトル **/
 h1 {
 	display:inline;
 	font-size: 48px;
 	text-shadow: #999 -1px 2px 2px;
 }
 
+/** サブタイトル **/
 h2 {
 	display:inline;
 	font-size: 32px;
     color: #aaa;
 }
 
-.code {
+/** フッター **/
+h6 {
+	display:inline;
+	font-size: 32px;
+	text-align:right;
 }
 
-.terminal {
+/** コマンド記述 **/
+.command {
+	white-space : pre;
+	width: 700px;
+	font-size: 24px;
+	background-color: black;
+
+	border: 2px glay solid;
+	display: block;
+    border-radius: 5px;
+
+    color: #0f0;
+
+    margin:10 0 0 100;
 }
 
+/** 注意書き **/
 div.notes {
-	font-size: 20px;
+	font-size: 32px;
     color: #a00;
+    margin:0 0 0 100;
 }
 
+/** 箇条書き **/
 ul {
 	white-space : normal;
 	list-style-type: square;
@@ -84,6 +106,20 @@ li {
 	font-size: 32px;
 }
 
+/** 箇条書き注意書き **/
+ul li div.notes {
+	font-size: 20px;
+    color: #a00;
+}
+
+/** 画像 **/
+img {
+	padding:20 0 0 50;
+	float: left;
+    margin-right:40px;
+}
+
+/** 画像箇条書き **/
 ul.image {
 	white-space : normal;
 	font-size: 24px;
@@ -94,11 +130,6 @@ ul.image li {
 	font-size: 24px;
 }
 
-img {
-	padding:20 0 0 50;
-	float: left;
-    margin-right:40px;
-}
 
 /** NOT SUPPORTED STYLES **/
 .not-supported section {
