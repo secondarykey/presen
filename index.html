@@ -17,10 +17,10 @@
 				<h1>まぁ落ち着いてGitしようじゃないか</h1>
 				<h2>Have a break,Have a Git(Hub).</h2>
 
-				<h6>
+				<div class="footer">
 				静岡Developers勉強会 GiｔHubハンズオン
 				へびしま
-				</h6>
+				</div>
 			</section>
 
 			<section class="step">
@@ -77,7 +77,7 @@
 					<div class="notes">集中との違いはあとで。</div>
 					</li>
 
-					<li>分散バージョン管理システムの１つ</li>
+					<li></li>
 				</ul>
 			</section>
 
@@ -124,26 +124,33 @@
 					# git init 
 					</div>
 					.gitが該当ディレクトリにできます。
-					<div class="notes">masterの説明</div>
 				</section>			
 
 				<section class="step" id="handson-nested">
-					<h1>git add</h1>
-					ファイルを作る
-					登録する
+					<h1>ファイルをリポジトリに追加(登録)する</h1>
+					<h2>リポジトリに</h2>
+					該当ディレクトリにindex.htmlを作成します。
+					<div class="command">
+					# git add index.html
+					</div>
 				</section>
 					
 				<section class="step" id="handson-nested">
-					<h1>git status</h1>
-					ステータスの表示を教える
-					※常にstatusを見る
+					<h1>ステータスの確認</h1>
+					<div class="command">
+					# git status 
+					# 
+					</div>
+					<div class="notes">masterの説明</div>
 				</section>	
 
 				<section class="step" id="handson-nested">
-					<h1>git commit</h1>
-					コミットを行う
+					<h1>コミットを行う</h1>
+					<div class="command">
+					# git commit index.html -m "register index page"
+					# 
+					</div>
 					コメントについて
-					-a
 				</section>	
 	
 				<section class="step" id="handson-nested">
@@ -151,13 +158,27 @@
 					--prety=oneline
 					formatでもいいかな、、、
 				</section>	
+				
+				<section class="step" id="handson-nested">
+					<h1>もう少し追加してみる</h1>
+
+					index.htmlを修正
+					<div class="command">
+					# git commit index.html
+					# 
+					</div>
+					コミットはマメに
+					
+					base.css,base.jsを作成
+					<div class="command">
+					# git commit -a
+					# 
+					</div>
+					-a について
+				</section>	
+	
 			</section>
 
-			<section class="step">
-				<h1>tips</h1>
-				ファイルの無視
-				ファイルのコピーについて
-			</section>
 
 			<section class="step">
 				<h1>ソースの管理状況</h1>
@@ -194,12 +215,6 @@
 			</section>
 
 			<section class="step">
-				<h1>tips</h1>
-				アーカイブする
-				サブモジュール化
-			</section>
-
-			<section class="step">
 				<h1>さてここで分散の良さ</h1>
 				今までの部分は自分のローカルコミット
 				ここからがリモートに対する操作
@@ -227,9 +242,13 @@
 				</section>
 
 			</section>
-			
+
 			<section class="step">
 				<h1>tips</h1>
+				ファイルの無視
+				アーカイブする
+				サブモジュール化
+				ファイルのコピーについて
 				コンフリクトした場合
 			</section>
 

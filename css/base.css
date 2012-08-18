@@ -64,10 +64,22 @@ h2 {
 }
 
 /** フッター **/
-h6 {
-	display:inline;
-	font-size: 32px;
-	text-align:right;
+.footer {
+	width:100%;
+	clear: both;
+	font-size: 24px;
+	color: #333;
+	bottom:0%;
+	position: fixed;
+	padding-top: 5px;
+	padding-right: 40px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	border-top-width: 3px;
+	border-top-style: solid;
+	border-top-color: #2A2A2A;
+	text-align: right;
+	
 }
 
 /** コマンド記述 **/
