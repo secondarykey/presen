@@ -65,16 +65,14 @@ h2 {
 
 /** フッター **/
 .footer {
-	width:100%;
+	width:99%;
 	clear: both;
 	font-size: 24px;
 	color: #333;
 	bottom:0%;
 	position: fixed;
 	padding-top: 5px;
-	padding-right: 40px;
 	padding-bottom: 0px;
-	padding-left: 0px;
 	border-top-width: 3px;
 	border-top-style: solid;
 	border-top-color: #2A2A2A;
@@ -115,6 +113,7 @@ li {
 ul li div.notes {
 	font-size: 20px;
     color: #a00;
+    margin:0 0 0 0;
 }
 
 /** 画像 **/

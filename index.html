@@ -22,7 +22,24 @@
 				へびしま
 				</div>
 			</section>
-
+			
+			<section class="step">
+				<h1>自己紹介</h1>
+				<ul>
+					<li>へびしまともうします。 </li>
+					<li>この辺でPGやってます。</li>
+					<li>勉強会界隈に現れます</li>
+					<li>@secondarykey
+					<br>
+					<div class="notes">有用なことはつぶやきません。</div>
+					</li>
+					<li>GitHub: secondarykey
+					<br>
+					<div class="notes">技術確認用のコード多いのでテストないですー</div>
+					</li>
+				</ul>
+			</section>
+			
 			<section class="step">
 				<h1>本日の予定</h1>
 				<h2>ハンズオンですー</h2>
@@ -31,6 +48,8 @@
 					<li>@kzfm さんがGitHubの説明</li>
 					<li>その他LTの予定</li>
 				</ul>
+
+				<div class="notes">みなさんGitインストールは大丈夫？</div>
 			</section>
 
 
@@ -40,6 +59,7 @@
 				<img src="./images/damesugi.jpg"/>
 
 				<ul class="image">
+					<li>とにかく絵のような管理はダメ</li>
 					<li>プロジェクトのコードの履歴を管理</li>
 					<li>いつ、誰が変更をかけたか？</li>
 					<li>変更したコードを戻す</li>
@@ -49,10 +69,8 @@
 			<section class="step" id="git">
 				<h1>どんな感じ？</h1>
 				<ul>
-					<li>「リポジトリ」で管理</li>
-					<li>CVS,Subversion,Git,Mercurial,VSS,TFS</li>
-					<li></li>
-					<li></li>
+					<li>「リポジトリ」で呼ばれる場所で管理</li>
+					<li>CVS,Subversion,Git,Mercurial,VSS,TFSなどが有名</li>
 				</ul>
 			</section>
 			
@@ -69,50 +87,71 @@
 			<section class="step" id="git">
 				<h1>改めて。。。Gitについて</h1>
 				<ul>
-					<li>linusが作成<br>
+					<li>
+					linusが作成
+					<br>
 					<div class="notes">Linuxの生みの親</div>
 					</li>
-	
-					<li>分散バージョン管理システムの１つ<br>
+
+					<li>
+					分散バージョン管理システムの１つ
+					<br>
 					<div class="notes">集中との違いはあとで。</div>
 					</li>
 
-					<li></li>
+					<li>
+					まぁ流行ってますよね。
+					</li>
 				</ul>
 			</section>
 
 			<section class="step">
 				<h1>環境確認</h1>
-				Gitのインストール状況
-				OSの確認
-				IDE何使っているかも聞いておこうかな？
+				<ul>
+					<li>
+					お使いのOSはなんですか？
+					</li>
+					<li>
+					シェルの操作になれてますか？
+					</li>
+					<li>
+					Gitはインストールできましたか？
+					</li>
+				</ul>
 			</section>
 
 			<section class="step" id="handson">
 				<h1>基本操作：ハンズオン</h1>
-				それではGitを触ってみましょう
+
+				あなたは新しいWebプロジェクトを開始(擬似的な)するにあたって
+				Gitでソース管理をおこなうことにしました。
+				今からWebページを作ることにしましょう！
+
+				まず、コンソールを立ち上げます。
 				<section class="step" id="handson-nested">
 					<h1 class="title">バージョンを確認</h1>
-				
+
 					バージョンの表示を行います。	
 					<div class="command">
 					# git --version
-					# 
+					git version 1.7.11.msysgit.1
 					</div>
-					<div class="notes">1.5とかないのよね？</div>
+					<div class="notes">私のおまじない:export PS1="$(__git_ps1)# "</div>
 				</section>
 
 				<section class="step" id="handson-nested">
 					<h1>設定の設定と確認</h1>
+					
 					<div class="command">
-					# git config --global -username xxxxxx
-					# git config --global -email xxxx@xxxx.com
+					# git config --global user.name xxxxxx
+					# git config --global user.email xxxx@xxxx.com
 					</div>
+					
 					<div class="command">
-					# git config --list
-					# 
+					# git config --list --global
+					xxxxxx=xxxxx
+					xxxxxx=xxxxx
 					</div>
-					<div class="notes">--global</div>
 				</section>
 	
 				<section class="step" id="handson-nested">
@@ -121,14 +160,19 @@
 					ディレクトリを作る
 					ディレクトリに移動する
 					<div class="command">
+					# mkdir handson
+					# cd handson
 					# git init 
+					Initialized empty Git repository in xxxx
+					
+					# ls .git
 					</div>
 					.gitが該当ディレクトリにできます。
 				</section>			
 
 				<section class="step" id="handson-nested">
 					<h1>ファイルをリポジトリに追加(登録)する</h1>
-					<h2>リポジトリに</h2>
+
 					該当ディレクトリにindex.htmlを作成します。
 					<div class="command">
 					# git add index.html
@@ -137,9 +181,15 @@
 					
 				<section class="step" id="handson-nested">
 					<h1>ステータスの確認</h1>
+					
+					現在の変更状況を見ることができます。
 					<div class="command">
 					# git status 
-					# 
+					# On branch master
+					#
+					# Initial commit
+					#
+					# Changes to be committed: xxxxx
 					</div>
 					<div class="notes">masterの説明</div>
 				</section>	
@@ -147,48 +197,57 @@
 				<section class="step" id="handson-nested">
 					<h1>コミットを行う</h1>
 					<div class="command">
-					# git commit index.html -m "register index page"
-					# 
+					# git commit -m "register index page"
 					</div>
 					コメントについて
 				</section>	
-	
-				<section class="step" id="handson-nested">
-					<h1>git log</h1>
-					--prety=oneline
-					formatでもいいかな、、、
-				</section>	
-				
-				<section class="step" id="handson-nested">
-					<h1>もう少し追加してみる</h1>
 
-					index.htmlを修正
-					<div class="command">
-					# git commit index.html
-					# 
-					</div>
-					コミットはマメに
+				<section class="step" id="handson-nested">
+					<h1>Gitの操作になれてみよー</h1>
+					<h2>HTMLを肉付けー</h2>
+					<ul>
+					  <li>base.js base.css を追加
+					  <br>
+					  <div class="notes">追加してコミット！</div>
+					  </li>
+					  <li>
+						index.htmlから読み込むように修正
+					    <div class="notes">コミット！</div>
+					  </li>
+					  <li>再修正</li>
+					</ul>
+				    <div class="notes">みなさんできましたかー？</div>
+				</section>
+
+				<section class="step" id="handson-nested">
+					<h1>コミットした履歴の確認を行います。</h1>
 					
-					base.css,base.jsを作成
 					<div class="command">
-					# git commit -a
-					# 
+					# git log
+					#
+					# git log --pretty=oneline
+					#
+					# git log --pretty=%s
+					#
 					</div>
-					-a について
 				</section>	
-	
 			</section>
 
 
 			<section class="step">
 				<h1>ソースの管理状況</h1>
-				SCM,VCSでソース管理しているか？
-				どの製品を使っているか？
-				バージョン管理(ブランチ、タグを多用)しているか？
+				<h2>みなさんのソース管理状況を聞いてみましょう？</h2>
+				<ul>
+					<li>SCM,VCSでソース管理しているか？</li>
+					<li>どの製品を使っているか？</li>
+					<li>バージョン管理(ブランチ、タグを多用)しているか？</li>
+				</ul>
 			</section>
-			
+
 			<section class="step">
 				<h1>ブランチとタグの考え方</h1>
+				<h2>運用はみなさんの自由ですー</h2>
+
 			</section>
 			
 			<section class="step">
@@ -207,7 +266,7 @@
 					<h1>git tag</h1>
 					タグを打つのはどこからかはプロジェクト次第
 				</section>
-	
+
 				<section class="step" id="handson-nested">
 					<h1>git rebase</h1>
 				</section>
