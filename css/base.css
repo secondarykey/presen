@@ -1,6 +1,6 @@
 /** GENERAL **/
 body {
-	font-family: Verdana, sans-serif;
+	font-family:'メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
 	min-height: 740px;
 	background-color: #ddd;
 }
@@ -52,6 +52,7 @@ section {
 /** タイトル **/
 h1 {
 	display:inline;
+	padding-left: -30px;
 	font-size: 48px;
 	text-shadow: #999 -1px 2px 2px;
 }
@@ -87,20 +88,19 @@ h2 {
 	font-size: 24px;
 	background-color: black;
 
-	border: 2px glay solid;
-	display: block;
+	border-top:20px gray solid;
     border-radius: 5px;
 
     color: #0f0;
 
-    margin:10 0 0 100;
+    margin:0 0 0 100;
 }
 
 /** 箇条書き **/
 ul {
 	white-space : normal;
 	list-style-type: square;
-	margin-left: 50px;
+    margin:-30 0 0 80;
 	font-size: 32px;
 }
 
@@ -109,11 +109,19 @@ li {
 	font-size: 32px;
 }
 
-/** 箇条書き注意書き **/
+/** 箇条書き注釈 **/
 ul li div.notes {
+	font-size: 20px;
+    color: #00a;
+    margin:0 0 0 0;
+    font-weight:bold;
+}
+/** 箇条書き注意 **/
+ul li div.caution {
 	font-size: 20px;
     color: #a00;
     margin:0 0 0 0;
+    font-weight:bold;
 }
 
 /** 画像 **/
@@ -125,6 +133,7 @@ img {
 
 /** 画像箇条書き **/
 ul.image {
+    margin:-30 0 0 80;
 	white-space : normal;
 	font-size: 24px;
 }
@@ -134,12 +143,22 @@ ul.image li {
 	font-size: 24px;
 }
 
-/** 注意書き **/
+/** 注釈 **/
 div.notes {
 	font-size: 32px;
-    color: #a00;
-    margin:0 0 0 100;
+    color: #00a;
+    margin:-50 0 0 100;
+    font-weight:bold;
 }
+
+/** 注意 **/
+div.caution {
+	font-size: 32px;
+    color: #a00;
+    margin:-50 0 0 100;
+    font-weight:bold;
+}
+
 /** NOT SUPPORTED STYLES **/
 .not-supported section {
 	position: relative;

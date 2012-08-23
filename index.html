@@ -26,27 +26,31 @@
 			<section class="step">
 				<h1>自己紹介</h1>
 				<ul>
-					<li>へびしまともうします。 </li>
-					<li>この辺でPGやってます。</li>
+					<li>へびしまともうします </li>
+					<li>この辺でPGやってます</li>
 					<li>勉強会界隈に現れます</li>
 					<li>@secondarykey
 					<br>
-					<div class="notes">有用なことはつぶやきません。</div>
+					<div class="notes">有用なことはつぶやきません</div>
 					</li>
 					<li>GitHub: secondarykey
 					<br>
 					<div class="notes">技術確認用のコード多いのでテストないですー</div>
+					</li>
+					<li>
+					資料はChromeでのみ動作確認
+					<div class="notes">jmpress.jsで作成しています</div>
 					</li>
 				</ul>
 			</section>
 			
 			<section class="step">
 				<h1>本日の予定</h1>
-				<h2>ハンズオンですー</h2>
+				<h2>Git(Hub)のハンズオンですー</h2>
 				<ul>
-					<li>私がGitの基本コマンド</li>
+					<li>私がバージョン管理、Gitの基本</li>
 					<li>@kzfm さんがGitHubの説明</li>
-					<li>その他LTの予定</li>
+					<li>その他LTの予定です</li>
 				</ul>
 
 				<div class="notes">みなさんGitインストールは大丈夫？</div>
@@ -59,9 +63,9 @@
 				<img src="./images/damesugi.jpg"/>
 
 				<ul class="image">
-					<li>とにかく絵のような管理はダメ</li>
-					<li>プロジェクトのコードの履歴を管理</li>
-					<li>いつ、誰が変更をかけたか？</li>
+					<li>とにかく絵のような管理は(TдT)</li>
+					<li>プロジェクトのコードを管理</li>
+					<li>いつ、誰が、どのように変更をかけたか？</li>
 					<li>変更したコードを戻す</li>
 				</ul>
 			</section>
@@ -69,9 +73,21 @@
 			<section class="step" id="git">
 				<h1>どんな感じ？</h1>
 				<ul>
-					<li>「リポジトリ」で呼ばれる場所で管理</li>
+					<li>ファイルを「リポジトリ」に登録</li>
+					<li>
+					ファイルを「リポジトリ」から取り出す
+					<br>
+					<div class="notes">チェックアウト</div>
+					</li>
+					<li>開発を行う</li>
+					<li>
+					ファイルを「リポジトリ」に書き込む
+					<br>
+					<div class="notes">チェックイン</div>
+					</li>
 					<li>CVS,Subversion,Git,Mercurial,VSS,TFSなどが有名</li>
 				</ul>
+				<div class="caution">注：分散型はこのイメージが少し違います</div>
 			</section>
 			
 			<section class="step" id="git">
@@ -86,9 +102,11 @@
 
 			<section class="step" id="git">
 				<h1>改めて。。。Gitについて</h1>
-				<ul>
+				<h2>すでにこんな子供もGitHub Tシャツをっ！</h2>
+				<img src="./images/github.jpg"/>
+				<ul class="image">
 					<li>
-					linusが作成
+					linusがカーネルの開発用に作成
 					<br>
 					<div class="notes">Linuxの生みの親</div>
 					</li>
@@ -96,11 +114,12 @@
 					<li>
 					分散バージョン管理システムの１つ
 					<br>
-					<div class="notes">集中との違いはあとで。</div>
+					<div class="notes">集中との違いはあとで</div>
 					</li>
 
 					<li>
-					まぁ流行ってますよね。
+					まぁ流行ってますよね
+					<div class="notes">流行っている理由もあとで</div>
 					</li>
 				</ul>
 			</section>
@@ -110,96 +129,100 @@
 				<ul>
 					<li>
 					お使いのOSはなんですか？
+					<br>
+					<div class="notes">Windows?Mac?Linux?</div>
 					</li>
 					<li>
 					シェルの操作になれてますか？
+					<br>
+					<div class="notes">bashを少しだけ使います</div>
 					</li>
 					<li>
 					Gitはインストールできましたか？
+					<br>
+					<div class="notes">ATNDのページをお読みください</div>
+					<li>
+					GitHubのアカウントを持ってる人？
+					<br>
 					</li>
 				</ul>
 			</section>
 
 			<section class="step" id="handson">
 				<h1>基本操作：ハンズオン</h1>
+				<h2>擬似的にプロジェクトを作ろう！</h2>
 
-				あなたは新しいWebプロジェクトを開始(擬似的な)するにあたって
+				あなたは新しいWebプロジェクトを任され、
 				Gitでソース管理をおこなうことにしました。
-				今からWebページを作ることにしましょう！
+				まずはWebページを作ることにしましょう！
 
-				まず、コンソールを立ち上げます。
+				まず、コンソールを立ち上げます
+				Windowsの場合、インストールしたシェルを起動します
+
 				<section class="step" id="handson-nested">
 					<h1 class="title">バージョンを確認</h1>
 
-					バージョンの表示を行います。	
+					バージョンの表示を行います	
 					<div class="command">
 					# git --version
 					git version 1.7.11.msysgit.1
 					</div>
-					<div class="notes">私のおまじない:export PS1="$(__git_ps1)# "</div>
+					<div class="notes">古い人居ないですよね？</div>
 				</section>
 
 				<section class="step" id="handson-nested">
-					<h1>設定の設定と確認</h1>
-					
+					<h1>設定値の設定と確認</h1>
 					<div class="command">
 					# git config --global user.name xxxxxx
 					# git config --global user.email xxxx@xxxx.com
-					</div>
-					
-					<div class="command">
+
 					# git config --list --global
 					xxxxxx=xxxxx
 					xxxxxx=xxxxx
 					</div>
+					<div class="notes">この設定が編集者として保存される</div>
 				</section>
 	
 				<section class="step" id="handson-nested">
 					<h1>リポジトリを作る</h1>
-
-					ディレクトリを作る
-					ディレクトリに移動する
+					ディレクトリを作りカレントディレクトリにします
 					<div class="command">
 					# mkdir handson
 					# cd handson
 					# git init 
 					Initialized empty Git repository in xxxx
-					
-					# ls .git
-					</div>
-					.gitが該当ディレクトリにできます。
+					</div> 
+					.gitが該当ディレクトリにできます
 				</section>			
 
 				<section class="step" id="handson-nested">
-					<h1>ファイルをリポジトリに追加(登録)する</h1>
-
-					該当ディレクトリにindex.htmlを作成します。
+					<h1>ファイルをリポジトリに登録する</h1>
+					<h2>ステージングする</h2>
+					該当ディレクトリにindex.htmlを作成します
 					<div class="command">
 					# git add index.html
 					</div>
+					これにより、Gitが追跡を開始します
 				</section>
 					
 				<section class="step" id="handson-nested">
 					<h1>ステータスの確認</h1>
 					
-					現在の変更状況を見ることができます。
+					現在の変更状況を見ることができます
 					<div class="command">
 					# git status 
-					# On branch master
-					#
-					# Initial commit
-					#
-					# Changes to be committed: xxxxx
 					</div>
-					<div class="notes">masterの説明</div>
+					本日は変更しながら、都度見て行きましょう
 				</section>	
 
 				<section class="step" id="handson-nested">
 					<h1>コミットを行う</h1>
+					
+					「コミット」を行うことで、ファイルの変更を登録します
 					<div class="command">
-					# git commit -m "register index page"
+					# git commit -m "register index page" [index.html]
 					</div>
-					コメントについて
+					ステータスを見てみましょう！
 				</section>	
 
 				<section class="step" id="handson-nested">
@@ -214,118 +237,336 @@
 						index.htmlから読み込むように修正
 					    <div class="notes">コミット！</div>
 					  </li>
-					  <li>再修正</li>
 					</ul>
-				    <div class="notes">みなさんできましたかー？</div>
+					ステータス確認！
+	
+				    <div class="notes">引数-aについて</div>
 				</section>
 
 				<section class="step" id="handson-nested">
-					<h1>コミットした履歴の確認を行います。</h1>
-					
+					<h1>コミットした履歴の確認を行います</h1>
 					<div class="command">
 					# git log
-					#
-					# git log --pretty=oneline
-					#
-					# git log --pretty=%s
-					#
+					# git log -p
+					# git log -1
+					# git log --pretty=fotmat: %s
 					</div>
+					パッチを確認したり色々できます
+	
+				    <div class="notes">基本的な操作はここまで！</div>
 				</section>	
 			</section>
 
+			<section class="step">
+				<h1>少し休憩</h1>
+				<h2>無駄なファイルをリポジトリに登録しない</h2>
+				Thumbs.db、.DS_Store、*.swpファイルを
+				登録しないようにしてみましょう！
+				.gitignore ファイルを作って以下のように記述するだけ。
+				<div class="command">
+				Thumbs.db
+				.DS_Store
+				*.swpファイル
+				</div>
+			</section>
 
 			<section class="step">
 				<h1>ソースの管理状況</h1>
-				<h2>みなさんのソース管理状況を聞いてみましょう？</h2>
+				<h2>みなさんのソース管理状況を聞いてみましょう</h2>
 				<ul>
-					<li>SCM,VCSでソース管理しているか？</li>
+					<li>普段SCM,VCSでソース管理しているか？</li>
 					<li>どの製品を使っているか？</li>
-					<li>バージョン管理(ブランチ、タグを多用)しているか？</li>
+					<li>ブランチ、タグを利用しているか？</li>
 				</ul>
 			</section>
 
 			<section class="step">
-				<h1>ブランチとタグの考え方</h1>
-				<h2>運用はみなさんの自由ですー</h2>
+				<h1>ブランチとタグについて</h1>
+				<ul>
+					<li>ブランチは開発中などのコード</li>
+					<li>タグはリリースしたり、マイルストーンなど</li>
+				</ul>
+			    <div class="caution">注：運用自体はプロジェクトで決まる</div>
+			</section>
 
+			<section class="step">
+				<h1>ブランチとタグ：ハンズオン</h1>
+				
+				あなたはサイトの骨組みまで作ったところで、
+				一番近いプロジェクトの目標を決めます
+
+				背景を変更してindexにページリストを追加してみましょう
+
+				<section class="step">
+					<h1>ブランチの表示と作成</h1>
+					<div class="command">
+					# git branch
+
+					# git branch color [master]
+
+					# git branch
+					</div>
+					<div class="notes">-d 削除、-m 名称変更</div>
+				</section>
+	
+				<section class="step">
+					<h1>作業するブランチを変更する</h1>
+					<div class="command">
+					# git checkout color
+
+					# git branch
+					</div>
+					操作対象のブランチに「*」がつきます
+			    	みなさんのコンソールには表示されてるかも
+				</section>
+
+				<section class="step">
+					<h1>開発作業を行います</h1>
+					<h2>ここからはさっきの通りです</h2>
+					<ul>
+					  <li>base.css に背景色を追加
+					  <br>
+					  <div class="notes">コミット！</div>
+					  </li>
+					  <li>
+						index.htmlにサイトコンテンツを追加
+					    <div class="notes">コミット！</div>
+					  </li>
+					</ul>
+			    	<div class="notes">コミットはこまめに</div>
+				</section>
+
+				<section class="step">
+					<h1>切り替えて状態を見る</h1>
+					<h2>Gitの対象ファイルの状態の確認</h2>
+					まずブラウザで作ったファイルを確認
+					<div class="command">
+					# git checkout master
+					</div>
+					対象をmasterに切り替えて再表示
+					ファイルシステムは操作しているブランチの状態になっている
+				</section>
+	
+				<section class="step">
+					<h1>そんな時お客様から要望が！！！</h1>
+					<h2>ブランチを複数作成する</h2>
+					「ねぇーMETAタグで記述しておいて！」と要望
+					colorは開発中なのでmaster からブランチを作成
+					<div class="command">
+					# git branch meta master
+					# git checkout meta
+					</div>
+					index.htmlを修正
+				</section>
+
+				<section class="step">
+					<h1>ブランチ間のマージ その１</h1>
+					<h2>colorとmetaの違いを確認</h2>
+
+					<div class="command">
+					# git diff color 
+					</div>
+
+				</section>
+				
+				<section class="step">
+					<h1>ブランチ間のマージ その２</h1>
+					<h2>マージ作業を行う</h2>
+
+					コンフリクト起こるかな？
+					<div class="command">
+					# git diff color 
+					</div>
+
+				</section>
+				
+				<section class="step">
+					<h1>修正が完了したのでリリースです</h1>
+					<h2>タグを打とう！</h2>
+					<div class="command">
+					# git checkout meta
+					# git tag 0.0.0
+	
+					# git tag
+					</div>
+					これにより納品したソースはいつでも手に入る
+			    	<div class="caution">タグを打つ場所はプロジェクト次第です</div>
+				</section>
+
+				<section class="step">
+					<h1>お客さんにファイルを渡す</h1>
+					<h2>アーカイブして渡そう！</h2>
+					<div class="command">
+					# git checkout meta
+					# git tag 0.0.0
+	
+					# git tag
+					</div>
+			    	<div class="notes">これにてリリース作業は完了！</div>
+				</section>
+				
+				<section class="step">
+					<h1>masterを最新の状態にする</h1>
+					<div class="command">
+					# git checkout master
+					# git rebase meta
+					</div>
+			    	<div class="caution">Baseを切り替えることになる</div>
+				</section>
+
+			</section>
+
+			<section class="step">
+				<h1>ちょっと休憩</h1>
+				<h2>シェルに疲れたあなたに</h2>
+				<div class="command">
+				# git gui
+				</div>
+				<div class="notes">tkなのでどのOSでも動作する(ハズ)</div>
+				EclipseのEGitも優秀になってきた
+				GitHub for WindowsもMetroでｶﾜｲｲ
+			</section>
+
+			<section class="step">
+				<h1>で、なんでGit(分散型)なの？</h1>
+
+				今までの部分はCVS,Subversion(集中型)を
+				使っていてもみなさん経験されているでしょう
+				分散型と呼ばれる部分の最大の違いはここからです
+
+				何か気づきませんでしたか？
+			</section>
+
+			<section class="step">
+				<h1>いままでのはまだローカル</h1>
+				<h2>リモートが一元管理の場所</h2>
+
+				分散型はリポジトリの管理状態が分散してます
+				ローカルに開発用のリポジトリ、
+				一元管理用にリモートのリポジトリがあります
+
+				チームとの連携はリモートで行うことになります
+			   	<div class="notes"></div>
 			</section>
 			
 			<section class="step">
-				<h1>ブランチとタグ：ハンズオン</h1>
-				それではブランチとタグを操作して見ましょう
-
-				<section class="step" id="handson-nested">
-					<h1>git branch</h1>
-				</section>
-	
-				<section class="step" id="handson-nested">
-					<h1>git checkout</h1>
-				</section>
-				
-				<section class="step" id="handson-nested">
-					<h1>git tag</h1>
-					タグを打つのはどこからかはプロジェクト次第
-				</section>
-
-				<section class="step" id="handson-nested">
-					<h1>git rebase</h1>
-				</section>
-
+				<h1>Git(分散管理)の良さ</h1>
+				<ul>
+					<li>
+					手元に履歴が存在
+					<br>
+			   		<div class="notes">最悪、オフラインでも開発可能</div>
+					</li>
+					<li>
+					リモートの問い合わせが少なくて済む
+					<br>
+			   		<div class="notes">「同期を押して休憩」がない</div>
+					</li>
+					<li>
+					開発者が上げなければ何してもよい
+					<br>
+			   		<div class="notes">手元でブランチ作って試す。とかできる</div>
+					</li>
+				</ul>
+				開発者にひじょーに有用な面が多い
 			</section>
-
+			
 			<section class="step">
-				<h1>さてここで分散の良さ</h1>
-				今までの部分は自分のローカルコミット
-				ここからがリモートに対する操作
+				<h1>Gitサーバを作る</h1>
+				Linux系です
+				<ul>
+					<li>
+					git-deamon,gitolite,Gitorious,[gitosis]
+					</li>
+					<li>
+					ネットワークはhttp,https,git,ssh
+					</li>
+					<li>
+					GitHub使ってもいいかなーと
+					<br>
+					<div class="notes">GitHub Enterpriseとかもあるよ</div>
+					</li>
+				</ul>
 			</section>
-	
+			
 			<section class="step">
 				<h1>リモートアクセス：ハンズオン</h1>
 				リモートに対してアクセスしてみましょう
-				※ハンズオンにするべきか悩み中
+
+				このプレゼンの資料はGitHubで管理して作りました
+				GitHubから取ってきてローカルで見てみましょう
 
 				<section class="step">
-					<h1>git remote add</h1>
+					<h1>プレゼン資料を取ってくる</h1>
+					<div class="command">
+					# cd ..
+					# git clone git://github.com/secondarykey/presen.git
+					# git branch
+					# git branch -r
+					</div>
+			   		<div class="notes">リモートブランチに置かれる</div>
+				</section>
+
+				<section class="step">
+					<h1>何度もURL打つの煩わしいのでー</h1>
+					<div class="command">
+					# git remote add remoteUrl git://github.com/xxxx
+					</div>
+
+					これで今後URLを打たなくて済みます
+					ただし、今操作しているリポジトリへの設定になります
 				</section>
 				
 				<section class="step">
-					<h1>git push</h1>
+					<h1>リモートブランチと同期を取る</h1>
+					手元のブランチに対して、
+					リモートのブランチを落としてきます
+					<div class="command">
+					# git branch -b presen master
+					# git pull remoteUrl 20120901/github 
+					</div>
+					ファイルを確認してみましょう！
+			   		<div class="caution">注：通常同じ名前でブランチを作成するべき</div>
 				</section>
 				
 				<section class="step">
-					<h1>git pull</h1>
-				</section>
-				
-				<section class="step">
-					<h1>git clone</h1>
+					<h1>リモートのリポジトリに送り込む</h1>
+					<h2>ハンズオンしないでね☆（ゝω・）</h2>
+
+					リモート(github)にリポジトリ(handson)を作成します
+					そこに今回作成したリポジトリを送ります
+					<div class="command">
+					# git push https://xxx/handson.git master
+					</div>
+					通常、git,sshを使うべきです
+			   		<div class="notes">注：HTTPはオーバーヘッドが大きい</div>
 				</section>
 
-			</section>
-
-			<section class="step">
-				<h1>tips</h1>
-				ファイルの無視
-				アーカイブする
-				サブモジュール化
-				ファイルのコピーについて
-				コンフリクトした場合
 			</section>
 
 			<section class="step">
 				<h1>これでgitの基本コマンドはOK！</h1>
-				<h2>こんな子供もGitHub Tシャツをっ！</h2>
-				<img src="./images/github.jpg"/>
-				<ul class="image">
-					<li>これでgitの基本的な</li>
-					<li>GUIもあります。</li>
-					<li>分散は開発者の助けになるとおもいます。</li>
+				<h2></h2>
+				<ul>
+					<li>分散は開発者の助けです！</li>
+					<li>慣れてくると快適過ぎて手放せません</li>
 				</ul>
 			</section>
 
 			<section class="step">
-				<h1>ハンズオンお疲れ様でした。</h1>
-				これであなたもgit使い
-				参考文献
+				<h1>やってみるか微妙</h1>
+				mv : 移動について
+				サブモジュール化
+			</section>
+
+			<section class="step">
+		
+		
+		
+		
+			
+				<h1>ハンズオンお疲れ様でした</h1>
+				<h2>これで基礎は終了！</h2>
 			</section>
 
 		</div>
