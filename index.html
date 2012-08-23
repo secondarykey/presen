@@ -53,7 +53,7 @@
 					<li>その他LTの予定です</li>
 				</ul>
 
-				<div class="notes">みなさんGitインストールは大丈夫？</div>
+				<div class="notes">みなさんGitインストールは大丈夫！？</div>
 			</section>
 
 
@@ -87,7 +87,6 @@
 					</li>
 					<li>CVS,Subversion,Git,Mercurial,VSS,TFSなどが有名</li>
 				</ul>
-				<div class="caution">注：分散型はこのイメージが少し違います</div>
 			</section>
 			
 			<section class="step" id="git">
@@ -139,8 +138,7 @@
 					</li>
 					<li>
 					Gitはインストールできましたか？
-					<br>
-					<div class="notes">ATNDのページをお読みください</div>
+					</li>
 					<li>
 					GitHubのアカウントを持ってる人？
 					<br>
@@ -187,8 +185,8 @@
 					<h1>リポジトリを作る</h1>
 					ディレクトリを作りカレントディレクトリにします
 					<div class="command">
-					# mkdir handson
-					# cd handson
+					# mkdir site
+					# cd site
 					# git init 
 					Initialized empty Git repository in xxxx
 					</div> 
@@ -212,24 +210,25 @@
 					<div class="command">
 					# git status 
 					</div>
-					本日は変更しながら、都度見て行きましょう
+					
 				</section>	
 
 				<section class="step" id="handson-nested">
 					<h1>コミットを行う</h1>
-					
+
 					「コミット」を行うことで、ファイルの変更を登録します
 					<div class="command">
-					# git commit -m "register index page" [index.html]
+					# git commit -m "create index page" [index.html]
 					</div>
-					ステータスを見てみましょう！
+					それではindex.htmlを骨格を作成してコミットしてみましょう！
+				    <div class="notes">Create時とChenge時の違い</div>
 				</section>	
 
 				<section class="step" id="handson-nested">
 					<h1>Gitの操作になれてみよー</h1>
-					<h2>HTMLを肉付けー</h2>
+					<h2>スタイルシートを追加しておく</h2>
 					<ul>
-					  <li>base.js base.css を追加
+					  <li>base.css を追加
 					  <br>
 					  <div class="notes">追加してコミット！</div>
 					  </li>
@@ -239,7 +238,6 @@
 					  </li>
 					</ul>
 					ステータス確認！
-	
 				    <div class="notes">引数-aについて</div>
 				</section>
 
@@ -266,7 +264,7 @@
 				<div class="command">
 				Thumbs.db
 				.DS_Store
-				*.swpファイル
+				*.swp
 				</div>
 			</section>
 
@@ -292,17 +290,16 @@
 			<section class="step">
 				<h1>ブランチとタグ：ハンズオン</h1>
 				
-				あなたはサイトの骨組みまで作ったところで、
-				一番近いプロジェクトの目標を決めます
+				あなたはサイトの骨組みまで作ったところで気付きました！
 
-				背景を変更してindexにページリストを追加してみましょう
+				そういえば、サイトに文字コードを設定していませんでした！
 
 				<section class="step">
 					<h1>ブランチの表示と作成</h1>
 					<div class="command">
 					# git branch
 
-					# git branch color [master]
+					# git branch bugfix [master]
 
 					# git branch
 					</div>
@@ -312,24 +309,23 @@
 				<section class="step">
 					<h1>作業するブランチを変更する</h1>
 					<div class="command">
-					# git checkout color
+					# git checkout bugfix
 
 					# git branch
 					</div>
 					操作対象のブランチに「*」がつきます
-			    	みなさんのコンソールには表示されてるかも
 				</section>
 
 				<section class="step">
 					<h1>開発作業を行います</h1>
 					<h2>ここからはさっきの通りです</h2>
 					<ul>
-					  <li>base.css に背景色を追加
+					  <li>base.css にcharsetを追加
 					  <br>
 					  <div class="notes">コミット！</div>
 					  </li>
 					  <li>
-						index.htmlにサイトコンテンツを追加
+						index.htmlにcharsetを追加
 					    <div class="notes">コミット！</div>
 					  </li>
 					</ul>
@@ -350,41 +346,54 @@
 				<section class="step">
 					<h1>そんな時お客様から要望が！！！</h1>
 					<h2>ブランチを複数作成する</h2>
-					「ねぇーMETAタグで記述しておいて！」と要望
-					colorは開発中なのでmaster からブランチを作成
+					「ウチのSEO対策はどうなっとるんだね！」と指摘
+					bugfix はまだ完成してません。
+					なので master からブランチを作成
 					<div class="command">
-					# git branch meta master
-					# git checkout meta
+					# git branch seo master
+					# git checkout seo
 					</div>
-					index.htmlを修正
+					index.htmlを修正、コミット
 				</section>
 
 				<section class="step">
 					<h1>ブランチ間のマージ その１</h1>
-					<h2>colorとmetaの違いを確認</h2>
-
+					<h2>bugfixとseoの違いを確認</h2>
+					
+					バグフィックス(bugfix)とお客さんの要望(seo)が完了しました。
+					現在の場所でバグフィックスとの違いを見てみます。
 					<div class="command">
-					# git diff color 
+					# git diff bugfix 
 					</div>
 
 				</section>
 				
 				<section class="step">
 					<h1>ブランチ間のマージ その２</h1>
-					<h2>マージ作業を行う</h2>
-
-					コンフリクト起こるかな？
+					<h2>マージしてみる</h2>
 					<div class="command">
-					# git diff color 
+					# git merge bugfix 
 					</div>
-
+			    	<div class="caution">コンフリクトーーーー！</div>
+			    	ステータスをみてみましょう。
 				</section>
 				
+				<section class="step">
+					<h1>ブランチ間のマージ その３</h1>
+					<h2>コンフリクトの見方</h2>
+					<div class="command">
+					&gt;&gt;&gt;&gt;&gt; HEAD  :今操作中のブランチ
+					
+					&lt;&lt;&lt;&lt;&lt; seo :対象のブランチ
+					</div>
+					正しいように変更してコミットします。
+				</section>
+
 				<section class="step">
 					<h1>修正が完了したのでリリースです</h1>
 					<h2>タグを打とう！</h2>
 					<div class="command">
-					# git checkout meta
+					# git checkout seo
 					# git tag 0.0.0
 	
 					# git tag
@@ -397,10 +406,7 @@
 					<h1>お客さんにファイルを渡す</h1>
 					<h2>アーカイブして渡そう！</h2>
 					<div class="command">
-					# git checkout meta
-					# git tag 0.0.0
-	
-					# git tag
+					# git archive --format=zip 0.0.0 &gt; site.zip
 					</div>
 			    	<div class="notes">これにてリリース作業は完了！</div>
 				</section>
@@ -409,22 +415,22 @@
 					<h1>masterを最新の状態にする</h1>
 					<div class="command">
 					# git checkout master
-					# git rebase meta
+					# git rebase seo
 					</div>
-			    	<div class="caution">Baseを切り替えることになる</div>
+			    	<div class="caution">mergeとは違う強力なコマンド</div>
 				</section>
 
 			</section>
 
 			<section class="step">
 				<h1>ちょっと休憩</h1>
-				<h2>シェルに疲れたあなたに</h2>
-				<div class="command">
+				<h2>シェルに疲れたあなたに</h2> <div class="command">
 				# git gui
 				</div>
 				<div class="notes">tkなのでどのOSでも動作する(ハズ)</div>
 				EclipseのEGitも優秀になってきた
 				GitHub for WindowsもMetroでｶﾜｲｲ
+				VSでもプラグインが存在します
 			</section>
 
 			<section class="step">
@@ -501,10 +507,11 @@
 					<div class="command">
 					# cd ..
 					# git clone git://github.com/secondarykey/presen.git
+					# cd presen
 					# git branch
 					# git branch -r
 					</div>
-			   		<div class="notes">リモートブランチに置かれる</div>
+			   		<div class="caution">リモートブランチに置かれる</div>
 				</section>
 
 				<section class="step">
@@ -522,7 +529,7 @@
 					手元のブランチに対して、
 					リモートのブランチを落としてきます
 					<div class="command">
-					# git branch -b presen master
+					# git checkout -b presen master
 					# git pull remoteUrl 20120901/github 
 					</div>
 					ファイルを確認してみましょう！
@@ -545,8 +552,8 @@
 			</section>
 
 			<section class="step">
-				<h1>これでgitの基本コマンドはOK！</h1>
-				<h2></h2>
+				<h1>Gitというより分散はエライ！</h1>
+				<h2>Gitが好きですけど</h2>
 				<ul>
 					<li>分散は開発者の助けです！</li>
 					<li>慣れてくると快適過ぎて手放せません</li>
@@ -554,12 +561,7 @@
 			</section>
 
 			<section class="step">
-				<h1>やってみるか微妙</h1>
-				mv : 移動について
-				サブモジュール化
-			</section>
-
-			<section class="step">
+		
 		
 		
 		
