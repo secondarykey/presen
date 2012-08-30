@@ -18,7 +18,7 @@
 				<h2>Have a break,Have a Git(Hub).</h2>
 
 				<div class="footer">
-				静岡Developers勉強会 GiｔHubハンズオン
+				静岡Developers勉強会 GitHubハンズオン
 				へびしま
 				</div>
 			</section>
@@ -171,8 +171,8 @@
 				<section class="step" id="handson-nested">
 					<h1>設定値の設定と確認</h1>
 					<div class="command">
-					# git config --global user.name xxxxxx
-					# git config --global user.email xxxx@xxxx.com
+					# git config --global user.name "xxxxxx"
+					# git config --global user.email "xxxx@xxxx.com"
 
 					# git config --list --global
 					xxxxxx=xxxxx
@@ -221,7 +221,6 @@
 					# git commit -m "create index page" [index.html]
 					</div>
 					それではindex.htmlを骨格を作成してコミットしてみましょう！
-				    <div class="notes">Create時とChenge時の違い</div>
 				</section>	
 
 				<section class="step" id="handson-nested">
@@ -357,8 +356,8 @@
 				</section>
 
 				<section class="step">
-					<h1>ブランチ間のマージ その１</h1>
-					<h2>bugfixとseoの違いを確認</h2>
+					<h1>ブランチ間の違いを確認</h1>
+					<h2>bugfixとseoの違い</h2>
 					
 					バグフィックス(bugfix)とお客さんの要望(seo)が完了しました。
 					現在の場所でバグフィックスとの違いを見てみます。
@@ -369,7 +368,7 @@
 				</section>
 				
 				<section class="step">
-					<h1>ブランチ間のマージ その２</h1>
+					<h1>マージとコンフリクト</h1>
 					<h2>マージしてみる</h2>
 					<div class="command">
 					# git merge bugfix 
@@ -379,12 +378,11 @@
 				</section>
 				
 				<section class="step">
-					<h1>ブランチ間のマージ その３</h1>
-					<h2>コンフリクトの見方</h2>
+					<h1>コンフリクトの見方</h1>
 					<div class="command">
-					&gt;&gt;&gt;&gt;&gt; HEAD  :今操作中のブランチ
-					
-					&lt;&lt;&lt;&lt;&lt; seo :対象のブランチ
+					&lt;&lt;&lt;&lt;&lt; HEAD  :今操作中のブランチ
+					=====
+					&gt;&gt;&gt;&gt;&gt; bugfix :対象のブランチ
 					</div>
 					正しいように変更してコミットします。
 				</section>
@@ -393,9 +391,7 @@
 					<h1>修正が完了したのでリリースです</h1>
 					<h2>タグを打とう！</h2>
 					<div class="command">
-					# git checkout seo
 					# git tag 0.0.0
-	
 					# git tag
 					</div>
 					これにより納品したソースはいつでも手に入る
@@ -459,9 +455,9 @@
 				<h1>Git(分散管理)の良さ</h1>
 				<ul>
 					<li>
-					手元に履歴が存在
+					開発者が上げなければ何してもよい
 					<br>
-			   		<div class="notes">最悪、オフラインでも開発可能</div>
+			   		<div class="notes">手元でブランチ作って試す。とかできる</div>
 					</li>
 					<li>
 					リモートの問い合わせが少なくて済む
@@ -469,9 +465,9 @@
 			   		<div class="notes">「同期を押して休憩」がない</div>
 					</li>
 					<li>
-					開発者が上げなければ何してもよい
+					手元に履歴が存在
 					<br>
-			   		<div class="notes">手元でブランチ作って試す。とかできる</div>
+			   		<div class="notes">最悪、オフラインでも開発可能</div>
 					</li>
 				</ul>
 				開発者にひじょーに有用な面が多い
@@ -479,13 +475,13 @@
 			
 			<section class="step">
 				<h1>Gitサーバを作る</h1>
-				Linux系です
 				<ul>
 					<li>
 					git-deamon,gitolite,Gitorious,[gitosis]
 					</li>
 					<li>
 					ネットワークはhttp,https,git,ssh
+			   		<div class="caution">注：HTTPはオーバーヘッドが大きい</div>
 					</li>
 					<li>
 					GitHub使ってもいいかなーと
@@ -511,7 +507,7 @@
 					# git branch
 					# git branch -r
 					</div>
-			   		<div class="caution">リモートブランチに置かれる</div>
+			   		<div class="note">リモートブランチに置かれる</div>
 				</section>
 
 				<section class="step">
@@ -529,11 +525,10 @@
 					手元のブランチに対して、
 					リモートのブランチを落としてきます
 					<div class="command">
-					# git checkout -b presen master
+					# git checkout -b handson master
 					# git pull remoteUrl 20120901/github 
 					</div>
 					ファイルを確認してみましょう！
-			   		<div class="caution">注：通常同じ名前でブランチを作成するべき</div>
 				</section>
 				
 				<section class="step">
@@ -546,7 +541,6 @@
 					# git push https://xxx/handson.git master
 					</div>
 					通常、git,sshを使うべきです
-			   		<div class="notes">注：HTTPはオーバーヘッドが大きい</div>
 				</section>
 
 			</section>
