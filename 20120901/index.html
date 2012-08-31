@@ -3,197 +3,570 @@
 	<head>
 		<title>Have a break,Have a GitHub</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link href="./css/base.css" rel="stylesheet" type="text/css" />
-		<script src="../js/jquery-1.7.2.min.js"></script>
-		<script src="../js/jmpress.min.js"></script>
-		<script src="./js/base.js"></script>
+		<link href="../css/base.css" rel="stylesheet" type="text/css" />
+
+		<script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
+		<script src="../js/jmpress.all.min.js" type="text/javascript"></script>
+		<script src="../js/base.js" type="text/javascript"></script>
 	</head>
 	<body>
+	
 
 		<div id="jmpress" data-template="auto">
-			<section class="step">
-				<h1 class="title">まぁ落ち着いてGitにしようじゃないか</h1>
-				Have a break,Have a Git(Hub).
+			<section class="step" id="home">
+				<h1>まぁ落ち着いてGitしようじゃないか</h1>
+				<h2>Have a break,Have a Git(Hub).</h2>
 
-				静岡Developers勉強会 GIｔHubハンズオン
+				<div class="footer">
+				静岡Developers勉強会 GitHubハンズオン
 				へびしま
+				</div>
 			</section>
 			
 			<section class="step">
-				<h1 class="title">自己紹介</h1>
-				secondarykey
-				programer
-			</section>
-
-			<section class="step">
-				<h1 class="title">Agenda</h1>
-				
-				Gitについて
-				
-				環境確認
-
-				Gitを触ってみよう：ハンズオン
-				
-				みなさんのソース管理状況
-				
-				ブランチとタグの考え方について
-				
-				リリースとタグを覚えよう：ハンズオン
-
-				Gitがなぜ生まれたか	
-
-				集中管理の問題点
-				
-				リモートにアクセスしてみよう	
-
-			</section>
-
-			<section class="step">
-				<h1 class="title">Gitについて</h1>
-				gitのこと
+				<h1>自己紹介</h1>
+				<ul>
+					<li>へびしまともうします </li>
+					<li>この辺でPGやってます</li>
+					<li>勉強会界隈に現れます</li>
+					<li>@secondarykey
+					<br>
+					<div class="notes">有用なことはつぶやきません</div>
+					</li>
+					<li>GitHub: secondarykey
+					<br>
+					<div class="notes">技術確認用のコード多いのでテストないですー</div>
+					</li>
+					<li>
+					資料はChromeでのみ動作確認
+					<div class="notes">jmpress.jsで作成しています</div>
+					</li>
+				</ul>
 			</section>
 			
 			<section class="step">
-				<h1 class="title">環境確認</h1>
-				Gitのインストール状況
-				OSの確認
-				IDE何使っているかも聞いておこうかな？
+				<h1>本日の予定</h1>
+				<h2>Git(Hub)のハンズオンですー</h2>
+				<ul>
+					<li>
+					私がバージョン管理、Gitの基本
+					<div class="notes">少し長いですがお付き合いください</div>
+					</li>
+					<li>@kzfm さんがGitHubの説明</li>
+					<li>その他LTの予定です</li>
+				</ul>
+
+				<div class="notes">みなさんGitインストールは大丈夫！？</div>
+			</section>
+
+
+			<section class="step" id="git">
+				<h1>まずバージョン管理とは</h1>
+				<h2><a href="http://www.atmarkit.co.jp/fjava/rensai4/scrum05/01.html">@ITから引用</a>。こんなことになってない？</h2>
+				<img class="normal" src="./images/damesugi.jpg"/>
+
+				<ul class="image">
+					<li>とにかく絵のような管理は(TдT)</li>
+					<li>プロジェクトのコードを管理</li>
+					<li>いつ、誰が、どのように変更をかけたか？</li>
+					<li>変更したコードを戻す</li>
+				</ul>
+			</section>
+
+			<section class="step" id="git">
+				<h1>どんな感じ？</h1>
+				<ul>
+					<li>ファイルを「リポジトリ」に登録</li>
+					<li>
+					ファイルを「リポジトリ」から取り出す
+					<br>
+					<div class="notes">チェックアウト</div>
+					</li>
+					<li>開発を行う</li>
+					<li>
+					ファイルを「リポジトリ」に書き込む
+					<br>
+					<div class="notes">チェックイン</div>
+					</li>
+					<li>CVS,Subversion,Git,Mercurial,VSS,TFSなどが有名</li>
+				</ul>
+			</section>
+			
+			<section class="step" id="git">
+				<h1>Gitの読み方(<a href="http://yomikata.org/word/github">YOMIKATA</a>より)</h1>
+				<img class="normal" src="./images/reading.jpg" width="500" height="400"/>
+				<ul class="image">
+					<li>現在は「ギッハブ」も躍進</li>
+					<li>「キットクル」も暗躍</li>
+				</ul>
+			</section>
+
+			<section class="step" id="git">
+				<h1>Gitについて</h1>
+				<img class="normal" src="./images/github.jpg"/>
+				<ul class="image">
+					<li>
+					linusがカーネルの開発用に作成
+					<br>
+					<div class="notes">Linuxの生みの親</div>
+					</li>
+
+					<li>
+					分散バージョン管理システムの１つ
+					<br>
+					<div class="notes">集中との違いはあとで</div>
+					</li>
+
+					<li>
+					まぁ流行ってますよね
+					<div class="notes">流行っている理由もあとで</div>
+					</li>
+				</ul>
+			</section>
+
+			<section class="step">
+				<h1>環境確認</h1>
+				<ul>
+					<li>
+					お使いのOSはなんですか？
+					<br>
+					<div class="notes">Windows?Mac?Linux?</div>
+					</li>
+					<li>
+					シェルの操作になれてますか？
+					<br>
+					<div class="notes">bashを少しだけ使います</div>
+					</li>
+					<li>
+					Gitはインストールできましたか？
+					</li>
+					<li>
+					GitHubのアカウントを持ってる人？
+					<br>
+					</li>
+				</ul>
 			</section>
 
 			<section class="step" id="handson">
-				<h1 class="title">基本操作：ハンズオン</h1>
-				それではGitを触ってみましょう
+				<h1>基本操作：ハンズオン</h1>
+				<h2>擬似的にプロジェクトを作ろう！</h2>
+				[仮想プロジェクト]
+				あなたは新しいWebプロジェクトを任され、
+				Gitでソース管理をおこなうことにしました。
+				まずはWebページを作ることにしましょう！
+
+				まず、コンソールを立ち上げます
+				Windowsの場合、インストールしたシェルを起動します
+
 				<section class="step" id="handson-nested">
-					<h1 class="title">git --version</h1>
-					バージョンを確認
+					<h1 class="title">バージョンを確認</h1>
+
+					バージョンの表示を行います	
+					<div class="command">
+					# git --version
+					git version 1.7.11.msysgit.1
+					</div>
+					<div class="notes">古い人居ないですよね？</div>
 				</section>
-				
+
 				<section class="step" id="handson-nested">
-					<h1 class="title">git config</h1>
-					--list
+					<h1>設定値の設定と確認</h1>
+					<div class="command">
+					# git config --global user.name "xxxxxx"
+					# git config --global user.email "xxxx@xxxx.com"
+
+					# git config --list --global
+					xxxxxx=xxxxx
+					xxxxxx=xxxxx
+					</div>
+					<div class="notes">この設定が編集者として保存される</div>
 				</section>
 	
 				<section class="step" id="handson-nested">
-					<h1 class="title">git init</h1>
-					フォルダを作る
-					.gitの確認
-					masterの説明
+					<h1>リポジトリを作る</h1>
+					ディレクトリを作りカレントディレクトリにします
+					<div class="command">
+					# mkdir site
+					# cd site
+					# git init 
+					Initialized empty Git repository in xxxx
+					</div> 
+					.gitが該当ディレクトリにできます
 				</section>			
-	
+
 				<section class="step" id="handson-nested">
-					<h1 class="title">git add</h1>
-					ファイルを作る
-					登録する
+					<h1>ファイルをリポジトリに登録する</h1>
+					<h2>ステージングする</h2>
+					該当ディレクトリにindex.htmlを作成します
+					<div class="command">
+					# git add index.html
+					</div>
+					これにより、Gitが追跡を開始します
 				</section>
 					
 				<section class="step" id="handson-nested">
-					<h1 class="title">git status</h1>
-					ステータスの表示を教える
-					※常にstatusを見る
+					<h1>ステータスの確認</h1>
+
+					現在の変更状況を見ることができます
+					<div class="command">
+					# git status 
+					</div>
+
 				</section>	
+
 				<section class="step" id="handson-nested">
-					<h1 class="title">git commit</h1>
-					コミットを行う
-					コメントについて
-					-a
+					<h1>コミットを行う</h1>
+
+					「コミット」を行うことで、ファイルの変更を登録します
+					<div class="command">
+					# git commit -m "create index page" [index.html]
+					</div>
+					それではindex.htmlを骨格を作成してコミットしてみましょう！
+			   		<div class="caution">Windowsの方は日本語注意！</div>
 				</section>	
+
+				<section class="step" id="handson-nested">
+					<h1>Gitの操作になれてみよー</h1>
+					<h2>スタイルシートを追加しておく</h2>
+					<ul>
+					  <li>base.css を追加
+					  <br>
+					  <div class="notes">追加してコミット！</div>
+					  </li>
+					  <li>
+						index.htmlから読み込むように修正
+					    <div class="notes">コミット！</div>
+					  </li>
+					</ul>
+					ステータス確認！
+				    <div class="notes">引数-aについて</div>
+				</section>
+
+				<section class="step" id="handson-nested">
+					<h1>コミットした履歴の確認を行います</h1>
+					<div class="command">
+					# git log
+					# git log -p
+					# git log -1
+					# git log --pretty=fotmat: %s
+					</div>
+					パッチを確認したり色々できます
 	
-				<section class="step" id="handson-nested">
-					<h1 class="title">git log</h1>
-					--prety=oneline
-					formatでもいいかな、、、
+				    <div class="notes">基本的な操作はここまで！</div>
 				</section>	
 			</section>
 
 			<section class="step">
-				<h1 class="title">tips</h1>
-				ファイルの無視
-				ファイルのコピーについて
+				<h1>ちょっと休憩</h1>
+				<h2>シェルに疲れたあなたに</h2> <div class="command">
+				# git gui
+				</div>
+				<div class="notes">tkなのでどのOSでも動作する(ハズ)</div>
+				EclipseのEGitも優秀になってきた
+				GitHub for WindowsもMetroでｶﾜｲｲ
+				VSでもプラグインが存在します
 			</section>
 
 			<section class="step">
-				<h1 class="title">ソースの管理状況</h1>
-				SCM,VCSでソース管理しているか？
-				どの製品を使っているか？
-				バージョン管理(ブランチ、タグを多用)しているか？
+				<h1>ソースの管理状況</h1>
+				<h2>みなさんのソース管理状況を聞いてみましょう</h2>
+				<ul>
+					<li>普段SCM,VCSでソース管理しているか？</li>
+					<li>どの製品を使っているか？</li>
+					<li>ブランチ、タグを利用しているか？</li>
+				</ul>
 			</section>
-			
-			<section class="step">
-				<h1 class="title">ブランチとタグの考え方</h1>
-			</section>
-			
-			<section class="step">
-				<h1 class="title">ブランチとタグ：ハンズオン</h1>
-				それではブランチとタグを操作して見ましょう
 
-				<section class="step" id="handson-nested">
-					<h1 class="title">git branch</h1>
+			<section class="step">
+				<h1>ブランチとタグについて</h1>
+				<ul>
+					<li>ブランチは開発中などのコード</li>
+					<li>タグはリリースしたり、マイルストーンなど</li>
+				</ul>
+			    <div class="caution">注：運用自体はプロジェクトで決まる</div>
+			</section>
+
+			<section class="step">
+				<h1>ブランチとタグ：ハンズオン</h1>
+				[仮想プロジェクト]
+				あなたはサイトの骨組みまで作ったところで気付きました！
+				そういえば、サイトに文字コードを設定していませんでした！
+
+				<section class="step">
+					<h1>ブランチの表示と作成</h1>
+					<div class="command">
+					# git branch
+
+					# git branch bugfix [master]
+
+					# git branch
+					</div>
+					<div class="notes">-d 削除、-m 名称変更</div>
 				</section>
 	
-				<section class="step" id="handson-nested">
-					<h1 class="title">git checkout</h1>
+				<section class="step">
+					<h1>作業するブランチを変更する</h1>
+					<div class="command">
+					# git checkout bugfix
+
+					# git branch
+					</div>
+					操作対象のブランチに「*」がつきます
+				</section>
+
+				<section class="step">
+					<h1>開発作業を行います</h1>
+					<h2>ここからはさっきの通りです</h2>
+					<ul>
+					  <li>base.css にcharsetを追加
+					  <br>
+					  <div class="notes">コミット！</div>
+					  </li>
+					  <li>
+						index.htmlにcharsetを追加
+					    <div class="notes">コミット！</div>
+					  </li>
+					</ul>
+			    	<div class="notes">コミットはこまめに</div>
+				</section>
+
+				<section class="step">
+					<h1>切り替えて状態を見る</h1>
+					<h2>Gitの対象ファイルの状態の確認</h2>
+					まずブラウザで作ったファイルを確認
+					<div class="command">
+					# git checkout master
+					</div>
+					対象をmasterに切り替えて再表示
+					ファイルシステムは操作しているブランチの状態になっている
+				</section>
+	
+				<section class="step">
+					<h1>そんな時お客様から要望が！！！</h1>
+					<h2>ブランチを複数作成する</h2>
+					「ウチのSEO対策はどうなっとるんだね！」と指摘
+					bugfix はまだ完成してません。
+					なので master からブランチを作成
+					<div class="command">
+					# git branch seo master
+					# git checkout seo
+					</div>
+				</section>
+
+				<section class="step">
+					<h1>ブランチ間の違いを確認</h1>
+					<h2>bugfixとseoの違い</h2>
+					index.htmlを修正、コミットして、
+					バグフィックス(bugfix)とお客さんの要望(seo)が完了しました。
+					現在の場所でバグフィックスとの違いを見てみます。
+					<div class="command">
+					# git diff bugfix [seo]
+					</div>
+
 				</section>
 				
-				<section class="step" id="handson-nested">
-					<h1 class="title">git tag</h1>
-					タグを打つのはどこからかはプロジェクト次第
+				<section class="step">
+					<h1>マージしてみる</h1>
+					
+					それではマージ作業を行なってみましょう！
+					<div class="command">
+					# git merge bugfix 
+					</div>
+			    	ステータスをみてみましょう。
+			    	<div class="caution">コンフリクト(競合)しています。</div>
 				</section>
-	
-				<section class="step" id="handson-nested">
-					<h1 class="title">git rebase</h1>
+				
+				<section class="step">
+					<h1>コンフリクトの見方</h1>
+					ファイルはこのようになっています。
+					<div class="command">
+					&lt;&lt;&lt;&lt;&lt; HEAD  :今操作中のブランチ
+					=====
+					&gt;&gt;&gt;&gt;&gt; bugfix :対象のブランチ
+					</div>
+					正しいように変更してコミットするのですが。。。
+				    <div class="notes">git mergetoolについて</div>
+				</section>
+
+				<section class="step">
+					<h1>修正が完了したのでリリースです</h1>
+					<h2>タグを打とう！</h2>
+					<div class="command">
+					# git tag 0.0.0
+					# git tag
+					</div>
+					これにより納品したソースはいつでも手に入る
+			    	<div class="caution">タグを打つ場所はプロジェクト次第です</div>
+				</section>
+
+				<section class="step">
+					<h1>お客さんにファイルを渡す</h1>
+					<h2>アーカイブして渡そう！</h2>
+					<div class="command">
+					# git archive --format=zip 0.0.0 &gt; site.zip
+					</div>
+			    	<div class="notes">これにてリリース作業は完了！</div>
+				</section>
+				
+				<section class="step">
+					<h1>masterを最新の状態にする</h1>
+					<div class="command">
+					# git checkout master
+					# git merge seo
+					</div>
+			    	<div class="caution">rebaseについて</div>
 				</section>
 
 			</section>
-
 			<section class="step">
-				<h1 class="title">tips</h1>
-				アーカイブする
-				サブモジュール化
+				<h1>少し休憩</h1>
+				<h2>無駄なファイルをリポジトリに登録しない</h2>
+				Thumbs.db、.DS_Store、*.swpファイルを
+				登録しないようにしてみましょう！
+				.gitignore ファイルを作って以下のように記述するだけ。
+				<div class="command">
+				Thumbs.db
+				.DS_Store
+				*.swp
+				</div>
 			</section>
 
 			<section class="step">
-				<h1 class="title">さてここで分散の良さ</h1>
-				今までの部分は自分のローカルコミット
-				ここからがリモートに対する操作
+				<h1>で、なんでGit(分散型)なの？</h1>
+
+				今までの部分はCVS,Subversion(集中型)を
+				使っていてもみなさん経験されているでしょう
+				分散型と呼ばれる部分の最大の違いはここからです
+
+				何か気づきませんでしたか？
 			</section>
-	
+
 			<section class="step">
-				<h1 class="title">リモートアクセス：ハンズオン</h1>
+				<h1>いままでのはまだローカル</h1>
+				<h2>リモートが一元管理の場所</h2>
+
+				分散型はリポジトリの管理状態が分散してます
+				ローカルに開発用のリポジトリ、
+				一元管理用にリモートのリポジトリがあります
+
+				チームとの連携はリモートで行うことになります
+			   	<div class="notes"></div>
+			</section>
+			
+			<section class="step">
+				<h1>Git(分散管理)の良さ</h1>
+				<ul>
+					<li>
+					開発者が上げなければ何してもよい
+					<br>
+			   		<div class="notes">手元でブランチ作って試す。とかできる</div>
+					</li>
+					<li>
+					リモートの問い合わせが少なくて済む
+					<br>
+			   		<div class="notes">「同期を押して休憩」がない</div>
+					</li>
+					<li>
+					手元に履歴が存在
+					<br>
+			   		<div class="notes">最悪、オフラインでも開発可能</div>
+					</li>
+				</ul>
+				開発者にひじょーに有用な面が多い
+			</section>
+			
+			<section class="step">
+				<h1>Gitサーバを作る</h1>
+				<ul>
+					<li>
+					git-deamon,gitolite,Gitorious,[gitosis]
+					</li>
+					<li>
+					ネットワークはhttp,https,git,ssh
+			   		<div class="caution">注：HTTPはオーバーヘッドが大きい</div>
+					</li>
+					<li>
+					GitHub使ってもいいかなーと
+					<br>
+					<div class="notes">GitHub Enterpriseとかもあるよ</div>
+					</li>
+				</ul>
+			</section>
+			
+			<section class="step">
+				<h1>リモートアクセス：ハンズオン</h1>
 				リモートに対してアクセスしてみましょう
-				※ハンズオンにするべきか悩み中
+
+				このプレゼンの資料はGitHubで管理して作りました
+				GitHubから取ってきてローカルで見てみましょう
 
 				<section class="step">
-					<h1 class="title">git remote add</h1>
+					<h1>プレゼン資料を取ってくる</h1>
+					<div class="command">
+					# cd ..
+					# git clone git://github.com/secondarykey/presen.git
+					# cd presen
+					# git branch
+					# git branch -r
+					</div>
+			   		<div class="notes">リモートブランチに置かれる</div>
+				</section>
+
+				<section class="step">
+					<h1>何度もURL打つの煩わしいのでー</h1>
+					<div class="command">
+					# git remote add remoteUrl git://github.com/xxxx
+					</div>
+
+					これで今後URLを打たなくて済みます
+					ただし、今操作しているリポジトリへの設定になります
 				</section>
 				
 				<section class="step">
-					<h1 class="title">git push</h1>
+					<h1>リモートブランチと同期を取る</h1>
+					手元のブランチに対して、
+					リモートのブランチを落としてきます
+					<div class="command">
+					# git checkout -b handson master
+					# git pull remoteUrl 20120901/github 
+					</div>
+					ファイルを確認してみましょう！
 				</section>
 				
 				<section class="step">
-					<h1 class="title">git pull</h1>
-				</section>
-				
-				<section class="step">
-					<h1 class="title">git clone</h1>
+					<h1>リモートのリポジトリに送り込む</h1>
+					<h2>ハンズオンしないでね☆（ゝω・）</h2>
+
+					リモート(github)にリポジトリ(handson)を作成します
+					そこに今回作成したリポジトリを送ります
+					<div class="command">
+					# git push https://xxx/handson.git master
+					</div>
+					通常、git,sshを使うべきです
 				</section>
 
 			</section>
+
+			<section class="step">
+				<h1>Gitというより分散はいい！</h1>
+				<h2>もっともっと便利なコマンドはあります！</h2>
+				<img width="360" height="360" class="normal" src="images/last.jpg">
+				<ul>
+					<li>Subversionからの移行ツールもあります。</li>
+					<li>慣れてくると快適過ぎて手放せません</li>
+					<li>入門gitとかがおすすめ</li>
+				</ul>
+			</section>
+
+			<section class="step">
 			
-			<section class="step">
-				<h1 class="title">tips</h1>
-				コンフリクトした場合
-			</section>
-
-			<section class="step">
-				<h1 class="title">これでgitの基本コマンドはOK！</h1>
-				gui周りの説明
-				分散の場合のアグレッシブな使い方
-			</section>
-
-			<section class="step">
-				<h1 class="title">ご清聴ありがごとうございました。</h1>
-				参考文献
+			
+			
+			
+			
+			
+				<h1>ハンズオンお疲れ様でした</h1>
+				<h2>この位で基礎を終了します！</h2>
 			</section>
 
 		</div>
