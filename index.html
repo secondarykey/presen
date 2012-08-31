@@ -60,7 +60,7 @@
 			<section class="step" id="git">
 				<h1>まずバージョン管理とは</h1>
 				<h2><a href="http://www.atmarkit.co.jp/fjava/rensai4/scrum05/01.html">@ITから引用</a>。こんなことになってない？</h2>
-				<img src="./images/damesugi.jpg"/>
+				<img class="normal" src="./images/damesugi.jpg"/>
 
 				<ul class="image">
 					<li>とにかく絵のような管理は(TдT)</li>
@@ -92,7 +92,7 @@
 			<section class="step" id="git">
 				<h1>Gitについて</h1>
 				<h2><a href="http://yomikata.org/word/github">YOMIKATA</a>より</h2>
-				<img src="./images/reading.jpg" width="500" height="400"/>
+				<img class="normal" src="./images/reading.jpg" width="500" height="400"/>
 				<ul class="image">
 					<li>現在は「ギッハブ」も躍進</li>
 					<li>「キットクル」も暗躍</li>
@@ -101,8 +101,7 @@
 
 			<section class="step" id="git">
 				<h1>改めて。。。Gitについて</h1>
-				<h2>すでにこんな子供もGitHub Tシャツをっ！</h2>
-				<img src="./images/github.jpg"/>
+				<img class="normal" src="./images/github.jpg"/>
 				<ul class="image">
 					<li>
 					linusがカーネルの開発用に作成
@@ -149,7 +148,7 @@
 			<section class="step" id="handson">
 				<h1>基本操作：ハンズオン</h1>
 				<h2>擬似的にプロジェクトを作ろう！</h2>
-
+				[仮想プロジェクト]
 				あなたは新しいWebプロジェクトを任され、
 				Gitでソース管理をおこなうことにしました。
 				まずはWebページを作ることにしましょう！
@@ -205,12 +204,12 @@
 					
 				<section class="step" id="handson-nested">
 					<h1>ステータスの確認</h1>
-					
+
 					現在の変更状況を見ることができます
 					<div class="command">
 					# git status 
 					</div>
-					
+
 				</section>	
 
 				<section class="step" id="handson-nested">
@@ -221,6 +220,7 @@
 					# git commit -m "create index page" [index.html]
 					</div>
 					それではindex.htmlを骨格を作成してコミットしてみましょう！
+			   		<div class="caution">Windowsの方は日本語注意！</div>
 				</section>	
 
 				<section class="step" id="handson-nested">
@@ -288,9 +288,8 @@
 
 			<section class="step">
 				<h1>ブランチとタグ：ハンズオン</h1>
-				
+				[仮想プロジェクト]
 				あなたはサイトの骨組みまで作ったところで気付きました！
-
 				そういえば、サイトに文字コードを設定していませんでした！
 
 				<section class="step">
@@ -352,29 +351,29 @@
 					# git branch seo master
 					# git checkout seo
 					</div>
-					index.htmlを修正、コミット
 				</section>
 
 				<section class="step">
 					<h1>ブランチ間の違いを確認</h1>
 					<h2>bugfixとseoの違い</h2>
-					
+					index.htmlを修正、コミットして、
 					バグフィックス(bugfix)とお客さんの要望(seo)が完了しました。
 					現在の場所でバグフィックスとの違いを見てみます。
 					<div class="command">
-					# git diff bugfix 
+					# git diff bugfix [seo]
 					</div>
 
 				</section>
 				
 				<section class="step">
-					<h1>マージとコンフリクト</h1>
-					<h2>マージしてみる</h2>
+					<h1>マージしてみる</h1>
+					
+					それではマージ作業を行なってみましょう！
 					<div class="command">
 					# git merge bugfix 
 					</div>
-			    	<div class="caution">コンフリクトーーーー！</div>
 			    	ステータスをみてみましょう。
+			    	<div class="caution">コンフリクト(競合)しています。</div>
 				</section>
 				
 				<section class="step">
@@ -385,6 +384,7 @@
 					&gt;&gt;&gt;&gt;&gt; bugfix :対象のブランチ
 					</div>
 					正しいように変更してコミットします。
+				    <div class="notes">git mergetoolについて</div>
 				</section>
 
 				<section class="step">
@@ -411,9 +411,9 @@
 					<h1>masterを最新の状態にする</h1>
 					<div class="command">
 					# git checkout master
-					# git rebase seo
+					# git merge seo
 					</div>
-			    	<div class="caution">mergeとは違う強力なコマンド</div>
+			    	<div class="caution">rebaseについて</div>
 				</section>
 
 			</section>
@@ -507,7 +507,7 @@
 					# git branch
 					# git branch -r
 					</div>
-			   		<div class="note">リモートブランチに置かれる</div>
+			   		<div class="notes">リモートブランチに置かれる</div>
 				</section>
 
 				<section class="step">
@@ -546,23 +546,20 @@
 			</section>
 
 			<section class="step">
-				<h1>Gitというより分散はエライ！</h1>
-				<h2>Gitが好きですけど</h2>
+				<h1>Gitというより分散はいい！</h1>
+				<h2>もっともっと便利なコマンドはあります！</h2>
+				<img width="360" height="360" class="normal" src="images/last.jpg">
 				<ul>
 					<li>分散は開発者の助けです！</li>
 					<li>慣れてくると快適過ぎて手放せません</li>
+					<li>Subversionからの移行ツールもあります。</li>
 				</ul>
 			</section>
 
 			<section class="step">
-		
-		
-		
-		
-		
-			
 				<h1>ハンズオンお疲れ様でした</h1>
-				<h2>これで基礎は終了！</h2>
+				<img class="center" src="./images/breakfast.jpg" width="520" height="400"/>
+				<h2>まだまだ基礎中の基礎です！</h2>
 			</section>
 
 		</div>

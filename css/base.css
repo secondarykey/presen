@@ -124,11 +124,18 @@ ul li div.caution {
     font-weight:bold;
 }
 
+
 /** ‰æ‘œ **/
-img {
+img.normal {
 	padding:20 0 0 50;
 	float: left;
     margin-right:40px;
+}
+
+/** ‰æ‘œ **/
+img.center {
+	padding:0 0 0 100;
+	clear:both;
 }
 
 /** ‰æ‘œ‰Óğ‘‚« **/
