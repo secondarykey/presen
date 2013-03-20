@@ -1,3 +1,4 @@
-静岡Developers勉強会GitHubハンズオン資料です。
-公開先は
+公開場所
+
 http://secondarykey.github.com/presen/20120901
+http://secondarykey.github.com/presen/20130413
