@@ -1,6 +1,17 @@
+@font-face {
+  font-family: 'VLPGothic';
+  src: url('./VL-PGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SourceCode';
+  src: url('./SourceCodePro-Black.ttf') format('truetype');
+}
+
+
+
 /** GENERAL **/
 body {
-	font-family:'メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	font-family:SourceCode,VLPGothic,'メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
 	min-height: 740px;
 	background-color: #ddd;
 }
@@ -52,13 +63,15 @@ section {
 /** タイトル **/
 h1 {
 	display:inline;
-	padding-left: -30px;
 	font-size: 48px;
 	text-shadow: #999 -1px 2px 2px;
+	margin-bottom:10px;
 }
 
 /** サブタイトル **/
 h2 {
+	padding:10px;
+	margin:10px;
 	display:inline;
 	font-size: 32px;
     color: #aaa;
@@ -147,8 +160,15 @@ ul.image li {
 div.notes {
 	font-size: 32px;
     color: #00a;
-    margin:-50 0 0 100;
+    margin:-100 0 0 50;
     font-weight:bold;
+
+	clear: both;
+	font-size: 24px;
+	bottom:0%;
+	position: fixed;
+	padding-top: 5px;
+	padding-bottom: 0px;
 }
 
 /** 注意 **/
