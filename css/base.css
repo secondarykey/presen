@@ -59,22 +59,30 @@ section {
 	-o-transition:      opacity 1s;
 	transition:         opacity 1s;
 }
-
 /** タイトル **/
 h1 {
 	display:inline;
 	font-size: 48px;
 	text-shadow: #999 -1px 2px 2px;
-	margin-bottom:10px;
+	margin:-100px 0px 0px -90px;
 }
 
 /** サブタイトル **/
 h2 {
-	padding:10px;
-	margin:10px;
 	display:inline;
+	margin:-100px 0px 0px -85px;
 	font-size: 32px;
-    color: #aaa;
+    color: #999;
+}
+
+p.centered {
+  width:95%;
+  text-align:right;
+  position: fixed;
+  top: 40%;
+  margin-top: -50px;
+  padding-right: 50px;
+  font-size: 36px;
 }
 
 /** フッター **/
@@ -82,16 +90,15 @@ h2 {
 	width:99%;
 	clear: both;
 	font-size: 24px;
-	color: #333;
+    color: #777;
 	bottom:0%;
 	position: fixed;
 	padding-top: 5px;
 	padding-bottom: 0px;
 	border-top-width: 3px;
 	border-top-style: solid;
-	border-top-color: #2A2A2A;
+	border-top-color: #7a7a7a;
 	text-align: right;
-	
 }
 
 /** コマンド記述 **/
@@ -160,11 +167,10 @@ ul.image li {
 div.notes {
 	font-size: 32px;
     color: #00a;
-    margin:-100 0 0 50;
+    margin:50 50 30 60;
     font-weight:bold;
 
 	clear: both;
-	font-size: 24px;
 	bottom:0%;
 	position: fixed;
 	padding-top: 5px;
@@ -175,8 +181,14 @@ div.notes {
 div.caution {
 	font-size: 32px;
     color: #a00;
-    margin:-50 0 0 100;
+    margin:50 50 30 60;
     font-weight:bold;
+
+	clear: both;
+	bottom:0%;
+	position: fixed;
+	padding-top: 5px;
+	padding-bottom: 0px;
 }
 
 /** NOT SUPPORTED STYLES **/
