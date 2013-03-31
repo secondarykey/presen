@@ -209,27 +209,40 @@
       <section class="step">
         <h1 class="title">プロジェクト管理</h1>
         <h2>Project.vim</h2>
+	<section class="command">
+	「:Project」で動作
+	「\C」でプロジェクトを初期化してくれる
+	</section>
       </section>
 
       <section class="step">
         <h1 class="title">拡張子に応じた設定</h1>
         <h2>ftplugin</h2>
+	「.vimproject」を開いた場合に「:Project」を行わなくてよくする
+	<section class="command">
+	拡張子に反応するようにする
+	</section>
 
+	<section class="command">
+	Project %
+	</section>
       </section>
 
       <section class="step">
         <h1 class="title">インデント</h1>
-
       indent-guids
       https://github.com/nathanaelkane/vim-indent-guides
-
       PEP8 の話
       http://www.python.org/dev/peps/pep-0008/
       </section>
 
       <section class="step">
         <h1 class="title">インテリセンス</h1>
-	Ctrl+n
+	<h2>Shougo/neocomplcache</h2>
+	<section class="command">
+	 let g:neocomplcache_enable_at_startup = 1 
+	 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"¬
+	</section>
       </section>
 
       <section class="step">
