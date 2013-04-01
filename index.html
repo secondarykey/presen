@@ -218,9 +218,13 @@
       <section class="step">
         <h1 class="title">拡張子に応じた設定</h1>
         <h2>ftplugin</h2>
-	「.vimproject」を開いた場合に「:Project」を行わなくてよくする
+        filetype on¬
+		filetype plugin on¬
+		filetype indent on¬
+
+        au BufRead,BufNewFile *.vimproject set filetype=project
 	<section class="command">
-	拡張子に反応するようにする
+	「.vimproject」を開いた場合に「:Project」を行わなくてよくする
 	</section>
 
 	<section class="command">
