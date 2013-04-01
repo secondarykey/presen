@@ -1,0 +1,325 @@
+@font-face {
+  font-family: 'VLPGothic';
+  src: url('./VL-PGothic-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SourceCode';
+  src: url('./SourceCodePro-Black.ttf') format('truetype');
+}
+
+
+
+/** GENERAL **/
+body {
+	font-family:SourceCode,VLPGothic,'メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	min-height: 740px;
+	background-color: #ddd;
+}
+
+
+#jmpress {
+	opacity: 1;
+
+	-webkit-transition: 0.5s;
+	-moz-transition:    0.5s;
+	-ms-transition:     0.5s;
+	-o-transition:      0.5s;
+	transition:         0.5s;
+}
+
+/** STEP STYLES **/
+section {
+	white-space : pre;
+	width: 900px;
+    height: 600px;
+	font-size: 28px;
+	min-height: 500px;
+	background-color: white;
+
+	display: block;
+    border-radius: 10px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .3);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    letter-spacing: -1px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	-ms-box-sizing:     border-box;
+	-o-box-sizing:      border-box;
+	box-sizing:         border-box;
+
+	-webkit-transition: opacity 1s;
+	-moz-transition:    opacity 1s;
+	-ms-transition:     opacity 1s;
+	-o-transition:      opacity 1s;
+	transition:         opacity 1s;
+}
+/** タイトル **/
+h1 {
+	display:inline;
+	font-size: 48px;
+	text-shadow: #999 -1px 2px 2px;
+	margin:-100px 0px 0px -90px;
+}
+
+/** サブタイトル **/
+h2 {
+	display:inline;
+	margin:-100px 0px 0px -85px;
+	font-size: 32px;
+    color: #999;
+}
+
+p.centered {
+  width:95%;
+  text-align:right;
+  position: fixed;
+  top: 40%;
+  margin-top: -50px;
+  padding-right: 50px;
+  font-size: 36px;
+}
+
+/** フッター **/
+.footer {
+	width:99%;
+	clear: both;
+	font-size: 24px;
+    color: #777;
+	bottom:0%;
+	position: fixed;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	border-top-width: 3px;
+	border-top-style: solid;
+	border-top-color: #7a7a7a;
+	text-align: right;
+}
+
+/** コマンド記述 **/
+.command {
+	white-space : pre;
+	width: 700px;
+	font-size: 24px;
+	background-color: black;
+
+	border-top:20px gray solid;
+    border-radius: 5px;
+
+    color: #0f0;
+
+    margin:0 0 0 100;
+}
+
+/** 箇条書き **/
+ul {
+	white-space : normal;
+	list-style-type: square;
+    margin:-30 0 0 80;
+	font-size: 32px;
+}
+
+li {
+	margin-bottom: 10px;
+	font-size: 32px;
+}
+
+/** 箇条書き注釈 **/
+ul li div.notes {
+	font-size: 20px;
+    color: #00a;
+    margin:0 0 0 0;
+    font-weight:bold;
+}
+/** 箇条書き注意 **/
+ul li div.caution {
+	font-size: 20px;
+    color: #a00;
+    margin:0 0 0 0;
+    font-weight:bold;
+}
+
+/** 画像 **/
+img {
+	padding:20 0 0 50;
+	float: left;
+    margin-right:40px;
+}
+
+/** 画像箇条書き **/
+ul.image {
+    margin:-30 0 0 80;
+	white-space : normal;
+	font-size: 24px;
+}
+
+ul.image li {
+	margin-bottom: 10px;
+	font-size: 24px;
+}
+
+/** 注釈 **/
+div.notes {
+	font-size: 32px;
+    color: #00a;
+    margin:50 50 30 60;
+    font-weight:bold;
+
+	clear: both;
+	bottom:0%;
+	position: fixed;
+	padding-top: 5px;
+	padding-bottom: 0px;
+}
+
+/** 注意 **/
+div.caution {
+	font-size: 32px;
+    color: #a00;
+    margin:50 50 30 60;
+    font-weight:bold;
+
+	clear: both;
+	bottom:0%;
+	position: fixed;
+	padding-top: 5px;
+	padding-bottom: 0px;
+}
+
+/** NOT SUPPORTED STYLES **/
+.not-supported section {
+	position: relative;
+	opacity: 1;
+	margin: 20px auto;
+}
+
+/** NAV **/
+#nav {
+	background: transparent;
+	position: fixed;
+	left: -5px;
+	top: 10px;
+	z-index: 9999;
+	pointer-events: auto;
+	opacity: 0;
+
+	-webkit-transform: translate3d(0,0,100000px);
+	-moz-transform:    translate3d(0,0,100000px);
+	-ms-transform:     translate3d(0,0,100000px);
+	-o-transform:      translate3d(0,0,100000px);
+	transform:         translate3d(0,0,100000px);
+}
+#nav li {
+	list-style: none;
+	margin: 8px 0px;
+}
+#nav a {
+	display: block;
+	position: relative;
+	left: -50px;
+	padding-left: 30px;
+	text-align: right;
+	width: 100%;
+
+	-webkit-transition: 0.5s;
+	-moz-transition:    0.5s;
+	-ms-transition:     0.5s;
+	-o-transition:      0.5s;
+	transition:         0.5s;
+}
+#nav a span {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#nav a.ui-state-hover, #nav a.ui-state-active {
+	left: 0px;
+}
+#nav ul {
+	position: relative;
+	width: 80%;
+	left: -300px;
+	max-height: 0px;
+	-webkit-transition: 0.5s;
+	-moz-transition:    0.5s;
+	-ms-transition:     0.5s;
+	-o-transition:      0.5s;
+	transition:         0.5s;
+}
+#nav li:hover ul, #nav li.active ul {
+	max-height: 170px;
+	left: 0px;
+}
+#nav ul li {
+	font-size: 0.6em;
+	margin: 3px 0px;
+}
+#nav ul li b {
+	padding-left: 10px;
+	display: block;
+}
+
+/** next prev **/
+
+#global-next, #global-prev {
+	position: fixed;
+	bottom: 5px;
+	width: 20%;
+	padding: 0.2em;
+	margin-left: 5px;
+	margin-right: 5px;
+	z-index: 9999;
+	text-align: center;
+	pointer-events: auto;
+	-webkit-transform: translate3d(0,0,100000px);
+	-moz-transform: translate3d(0,0,100000px);
+	-ms-transform: translate3d(0,0,100000px);
+	-o-transform: translate3d(0,0,100000px);
+	transform: translate3d(0,0,100000px);
+}
+#global-prev {
+	right: 50%;
+}
+
+#global-next {
+	left: 50%;
+}
+
+.next {
+	float: right;
+}
+.prev {
+	float: left;
+}
+.next, .prev {
+	margin-top: 50px;
+	font-size: 22px;
+}
+
+.step:not(.active):not(.nested-active) {
+	z-index: 1;
+	opacity: 0.3;
+}
+
+
+.step:not(.active):not(.init-css) .intro-top {
+	margin-top: -1500px;
+	-webkit-transform: rotate(-30deg);
+	-moz-transform:    rotate(-30deg);
+	-ms-transform:     rotate(-30deg);
+	-o-transform:      rotate(-30deg);
+	transform:         rotate(-30deg);
+}
+
+.step:not(.active):not(.init-css) .intro-bottom {
+	margin-top: 500px;
+	-webkit-transform: rotate(-30deg);
+	-moz-transform:    rotate(-30deg);
+	-ms-transform:     rotate(-30deg);
+	-o-transform:      rotate(-30deg);
+	transform:         rotate(-30deg);
+}
