@@ -37,35 +37,72 @@
 
       <section class="step">
       <p class="centered">
-      普段はJavaでGAE系の
-      コーディングしている事が多いです
+      バーテンをやっているので
+      サーバ管理のいらないGAEは最適です
       </p>
       </section>
 
       <section class="step">
-        <h1>なんでそんな私に・・・</h1>
-        <ul>
-          <li>巳年生まれ(24歳)</li>
-          <li>苗字が「へびしま」</li>
-        </ul>
-        <div class="notes">ただそれだけ</div>
+      <p class="centered">
+      私は静的な言語が好きです。
+      </p>
       </section>
 
       <section class="step">
-        <h1>GoogleAppEngineの特徴</h1>
-        <h2>GoogleのPaaS</h2>
+      <p class="centered">
+      そんな私に白羽の矢がっ！
+      </p>
+      </section>
+
+      <section class="step">
+        <p class="centered">
+          巳年で開催
+          偶然にも苗字が「へびしま」
+          偶然にも巳年生まれ(24歳)
+        </p>
+        <div class="notes">たったそれだけっ！</div>
+      </section>
+
+      <section class="step">
+        <h1>さてGoogleAppEngineの特徴です</h1>
+        <h2>GoogleのPaaS環境</h2>
         <ul>
           <li>課金分スケールしてくれる</li>
           <li>サーバ管理しなくて良い</li>
-          <li>難しくて楽しい！</li>
+          <li>なにより楽しい！</li>
         </ul>
       </section>
 
       <section class="step">
-        <h1>言語の選択</h1>
+        <p class="centered">
+        で何が楽しいの？
+        </p>
+      </section>
+
+      <section class="step">
+        <h1>技術者だから！</h1>
+        <h2>縛られるのが快感！</h2>
+        <ul>
+          <li>RDBじゃない！</li>
+          <li>CPUの使い方！</li>
+          <li>ファイルが使えない！※</li>
+          <li>どうやってお金を浮かすか！</li>
+          <li>使える言語が３つ！</li>
+        </ul>
+        <div class="notes">※現在はファイルシステムライクに書ける</div>
+      </section>
+
+      <section class="step">
+        <p class="centered">
+	Googleさん油断すると進化しすぎ
+        </p>
+        <div class="caution">※サービス中止とか言わないでね！</div>
+      </section>
+
+      <section class="step">
+        <h1>使える言語</h1>
         <ul>
           <li>Java</li>
-
           <li>Go</li>
           <li>Python</li>
         </ul>
@@ -73,62 +110,106 @@
 
       <section class="step">
       <p class="centered">
-      まぁインタプリタ慣れしている方は
-      PythonでGAEを初めてはいかがでしょうか？
+      インタプリタ慣れしている方は
+      PythonでGAEを初めてはいかが？
       </p>
       </section>
 
       <section class="step">
         <h1>Python2.7について</h1>
-        <h2>2.6も選べます</h2>
-	マルチスレッド
-	並列リクエスト
-	Pythonバイトコードのアップロード
-	ネイティブJSON
-        CGIのみからWSGI推奨
+	<ul>
+	<li>マルチスレッド、並列リクエストになりました。</li>
+	<li>Pythonバイトコードのアップロード<</li>
+	<li>ネイティブJSONが可能になりました。<</li>
+	<li>CGIのみからWSGI推奨<</li>
+	</ul>
       </section>
 
       <section class="step">
-        <h1>フレームワーク選定</h1>
-        <h2>http://goo.gl/KDqdz</h2>
+        <h1>簡単にアプリがかけます</h1>
+        <h2>構成</h2>
+	(myapp)
+	  ├── app.yaml
+	  └── main.py
 
-        <section class="step">
-          <h1 class="title">WebApp2</h1>
-	  AppEngineで動かすには一番簡単なフレームワーク
-	  WebAppの後継バージョンが使用できます。
-        </section>
+<div class="command">
+  class HelloWebapp2(webapp2.RequestHandler):
 
-        <section class="step">
-          <h1 class="title">Django</h1>
-	  MVCフレームワークです。
-	 
-        </section>
+    def get(self):
+      self.response.write('Hello webapp2')
 
-        <section class="step">
-          <h1 class="title">Kay Framework</h1>
-	  AppEngine用のフレームワーク
-	  テンプレートエンジンは「Jinja2」
-        </section>
+  app = webapp2.WSGIApplication([
+        ('/',HelloWebapp2),
+        ],debug=True)
+
+</div>
+      </section>
+
+      <section>
+        <h1>app.yaml</h1>
+	<h2>GAEアプリケーションの設定</h2>
+	<div class="command">
+	  application: python
+	  version: 1
+	  runtime: python27
+	  api_version: 1
+	  threadsafe: true¬
+
+	  handlers:¬
+	  - url: /.*¬
+	    script: main.app¬
+	</div>
+      </section>
+
+      <section>
+        <h1>サーバの起動</h1>
+	<h2>ローカルで挙動を確認</h2>
+	<div class="command">
+	python dev_appserver.py ./
+	</div>
+      </section>
+
+      <section>
+        <h1>デプロイ！</h1>
+	<div class="command">
+	python appcfg.py update ./
+	</div>
+      </section>
+
+      <section class="step">
+        <h1 class="title">これはWebApp2というフレームワーク</h1>
+        <h2>使えるフレームワークはいろいろ</h2>
+        http://goo.gl/KDqdz
+      </section>
+
+      <section class="step">
+        <p class="centered">
+        個人的にはDjangoがいいのですが、
+        私は最適化されたKay Frameworkが好きです
+        </p>
       </section>
 
       <section class="step">
       <p class="centered">
       個人的な見解としては
-      あんまりガシャガシャしてない方が良い
+      あんまりガシャガシャしてない方が良いと思います
       </p>
       </section>
 
       <section class="step">
         <h1>さて本題の開発環境を考えてみましょう</h1>
         <div class="caution"></div>
-  
+
         <section class="step">
           <h1 class="title">eclipse</h1>
 	  PyDevを利用して開発環境を構築
         </section>
+
         <section class="step">
           <h1 class="title">netbeans</h1>
+	  Rubyはよく聞くけど、あまりpythonは聞かない
         </section>
+
         <section class="step">
           <h1 class="title">pycharm</h1>
 	  Googleの松尾氏も推奨してたよ。
@@ -153,11 +234,6 @@
       </section>
 
       <section class="step">
-        <h1>なぜVimを選択？</h1>
-        <div class="notes">という事で最大限にVimの力を！</div>
-      </section>
-
-      <section class="step">
       <p class="centered">
       なぜVimを選択したか？
       </p>
@@ -171,12 +247,6 @@
 
       <section class="step">
       <p class="centered">
-      まぁ冗談はさておき。
-      </p>
-      </section>
-
-      <section class="step">
-      <p class="centered">
       軽く書くのがスクリプト言語の良さかもねー
       </p>
       </section>
@@ -184,14 +254,14 @@
       <section class="step">
         <h1>まずはGentooをインストール</h1>
         冗談だけど、Windows環境は少しやりづらいかも。
-	いろいろツール類も
       </section>
 
       <section class="step">
         <h1>Vimの基本構成</h1>
+
 	<ul>
-		<li>.vimrc</li>
-		<li>.vim</li>
+	<li>.vimrc</li>
+	<li>.vim</li>
 	</ul>
       </section>
 
@@ -199,6 +269,7 @@
         <h1>Vundleのインストール</h1>
 	githubにあるvimを取ってくる仕組み
 	<div class="command">:BundleInstall</div>
+	NeoBundleもあるよ
       </section>
 
       <section class="step">
@@ -209,23 +280,20 @@
       <section class="step">
         <h1 class="title">プロジェクト管理</h1>
         <h2>Project.vim</h2>
-	<section class="command">
+	<div class="command">
 	「:Project」で動作
 	「\C」でプロジェクトを初期化してくれる
-	</section>
+	</div>
       </section>
 
       <section class="step">
         <h1 class="title">拡張子に応じた設定</h1>
         <h2>ftplugin</h2>
-	「.vimproject」を開いた場合に「:Project」を行わなくてよくする
-	<section class="command">
 	拡張子に反応するようにする
-	</section>
-
-	<section class="command">
+	「.vimproject」を開いた場合に「:Project」を行わなくてよくする
+	<div class="command">
 	Project %
-	</section>
+	</div>
       </section>
 
       <section class="step">
@@ -239,10 +307,10 @@
       <section class="step">
         <h1 class="title">インテリセンス</h1>
 	<h2>Shougo/neocomplcache</h2>
-	<section class="command">
+	<div class="command">
 	 let g:neocomplcache_enable_at_startup = 1 
 	 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"¬
-	</section>
+	</div>
       </section>
 
       <section class="step">
@@ -259,7 +327,15 @@
       </section>
 
       <section class="step">
-        <h1 class="title">デプロイ</h1>
+        <h1 class="title">GAE周り</h1>
+      </section>
+
+      <section class="step">
+        <h1 class="title">開発環境をいじるということ</h1>
+        <p class="centered">
+	開発効率を極限まで上げることが
+	開発スピードを極限に上げることにつながるかと
+        </p>
       </section>
 
       <section class="step">
