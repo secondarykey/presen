@@ -119,9 +119,9 @@
         <h1>Python2.7について</h1>
 	<ul>
 	<li>マルチスレッド、並列リクエストになりました。</li>
-	<li>Pythonバイトコードのアップロード<</li>
-	<li>ネイティブJSONが可能になりました。<</li>
-	<li>CGIのみからWSGI推奨<</li>
+	<li>Pythonバイトコードのアップロード</li>
+	<li>ネイティブJSONが可能になりました。</li>
+	<li>CGIのみからWSGI推奨</li>
 	</ul>
       </section>
 
@@ -132,7 +132,7 @@
 	  ├── app.yaml
 	  └── main.py
 
-<div class="command">
+<div class="command"
   class HelloWebapp2(webapp2.RequestHandler):
 
     def get(self):
@@ -199,12 +199,10 @@
       <section class="step">
         <h1>さて本題の開発環境を考えてみましょう</h1>
         <div class="caution"></div>
-
         <section class="step">
           <h1 class="title">eclipse</h1>
 	  PyDevを利用して開発環境を構築
         </section>
-
         <section class="step">
           <h1 class="title">netbeans</h1>
 	  Rubyはよく聞くけど、あまりpythonは聞かない
@@ -247,6 +245,12 @@
 
       <section class="step">
       <p class="centered">
+      まぁ冗談はさておき。
+      </p>
+      </section>
+
+      <section class="step">
+      <p class="centered">
       軽く書くのがスクリプト言語の良さかもねー
       </p>
       </section>
@@ -258,7 +262,6 @@
 
       <section class="step">
         <h1>Vimの基本構成</h1>
-
 	<ul>
 	<li>.vimrc</li>
 	<li>.vim</li>
@@ -291,6 +294,10 @@
         <h2>ftplugin</h2>
 	拡張子に反応するようにする
 	「.vimproject」を開いた場合に「:Project」を行わなくてよくする
+filetype on¬
+filetype plugin on¬
+filetype indent on¬
+au BufRead,BufNewFile *.vimproject set filetype=project
 	<div class="command">
 	Project %
 	</div>
@@ -347,6 +354,5 @@
       </section>
 
     </div>
-
   </body>
 </html>
