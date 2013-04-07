@@ -37,41 +37,52 @@
 
       <section class="step">
       <p class="centered">
-      バーテンをやっているので
-      サーバ管理のいらないGAEは最適です
+      本日は懇親会を予約いただき
+      ありがとうございます
+      日本酒を用意してお待ちしております。
+      <div class="caution">準備のため１６時にはあがります</div>
       </p>
       </section>
 
       <section class="step">
       <p class="centered">
-      私は静的な言語が好きです。
+      まぁバーテンをやっているので
+      サーバ管理のいらないGAEは最適ですよねー
       </p>
       </section>
 
       <section class="step">
       <p class="centered">
+      こんなときになんですが
+      私はどちらかというとコンパイル言語が好きです。
+      </p>
+      <div class="notes">C++,C#,Javaなど</div>
+      </section>
+
+      <section class="step" style="background: url(images/knee.jpg) no-repeat; background-size:cover;">
+      <p class="centered" style="color:black;">
       そんな私に白羽の矢がっ！
-      <img src="images/knee.jpg">
       </p>
       </section>
 
       <section class="step">
+        <h1>それは・・・</h1>
         <p class="centered">
           巳年で開催
           偶然にも苗字が「へびしま」
           偶然にも巳年生まれ(24歳)
         </p>
-        <div class="notes">たったそれだけっ！</div>
+        <div class="notes">まぁ率先して発表しようぜ精神です！</div>
       </section>
 
       <section class="step">
         <h1>さてGoogleAppEngineの特徴です</h1>
         <h2>GoogleのPaaS環境</h2>
         <ul>
-          <li>課金分スケールしてくれる</li>
           <li>サーバ管理しなくて良い</li>
-          <li>なにより楽しい！</li>
+          <li>課金分スケールしてくれる</li>
         </ul>
+        <div class="notes">なによりGAEは楽しい！</div>
       </section>
 
       <section class="step">
@@ -88,7 +99,6 @@
           <li>CPUの使い方！</li>
           <li>ファイルが使えない！※</li>
           <li>どうやってお金を浮かすか！</li>
-          <li>使える言語が３つ！</li>
         </ul>
         <div class="notes">※現在はファイルシステムライクに書ける</div>
       </section>
@@ -97,7 +107,7 @@
         <p class="centered">
 	Googleさん油断すると進化しすぎ
         </p>
-        <div class="caution">※サービス中止とか言わないでね！</div>
+        <div class="caution">最新のSDKでついにソケット対応したり</div>
       </section>
 
       <section class="step">
@@ -118,9 +128,10 @@
 
       <section class="step">
         <h1>Python2.7について</h1>
+        <h2>SDK1.6.0辺りから対応</h2>
 	<ul>
 	<li>マルチスレッド、並列リクエストになりました
-	<div class="notes">スレッドセーフであるかが重要</div>
+	<div class="notes">スレッドを意識できる</div>
 	</li>
 	<li>Pythonバイトコードのアップロード</li>
 	<li>ネイティブJSONが可能になりました。
@@ -152,32 +163,40 @@
       <section>
         <h1>app.yaml</h1>
 	<h2>GAEアプリケーションの設定</h2>
-	<div class="command">
-	  application: python
-	  version: 1
-	  runtime: python27
-	  api_version: 1
-	  threadsafe: true¬
+<div class="command">
+  application: python
+  version: 1
+  runtime: python27
+  api_version: 1
+  threadsafe: true¬
 
-	  handlers:¬
-	  - url: /.*¬
-	    script: main.app¬
-	</div>
+  handlers:¬
+  - url: /.*¬
+    script: main.app¬
+</div>
       </section>
 
       <section>
-        <h1>サーバの起動</h1>
+        <h1>開発サーバの起動</h1>
 	<h2>ローカルで挙動を確認</h2>
-	<div class="command">
-	python dev_appserver.py ./
-	</div>
+
+<div class="command">
+python dev_appserver.py ./
+
+</div>
+<div class="notes">localhost:8080で動作します。<div>
       </section>
 
       <section>
         <h1>デプロイ！</h1>
-	<div class="command">
-	python appcfg.py update ./
-	</div>
+	<h2>ローカルで挙動を確認</h2>
+
+<div class="command">
+python appcfg.py update ./
+
+</div>
+
+        <div class="notes">{id}.appspot.comで動作します</div>
       </section>
 
       <section class="step">
@@ -191,44 +210,48 @@
         個人的にはDjangoがいいのですが、
         私は最適化されたKay Frameworkが好きです
         </p>
+        <div class="notes">まぁ好きなものを選びましょう！</div>
       </section>
 
-      <section class="step">
-      <p class="centered">
-      個人的な見解としては
-      あんまりガシャガシャしてない方が良いと思います
+      <section class="step" style="background: url(images/develop.jpg) no-repeat; background-size:cover;">
+      <p class="centered" style="color:white;font-family:VLPGothic;">
+      それでは本題の
+      各IDEを見ていきましょう
       </p>
-      </section>
-
-      <section class="step">
-        <img src="images/develop.jpg">
-        <div class="caution"></div>
         <section class="step">
           <h1 class="title">eclipse</h1>
 	  PyDevを利用して開発環境を構築
+          <div class="caution">まぁ重いですよねー</div>
         </section>
         <section class="step">
           <h1 class="title">netbeans</h1>
 	  Rubyはよく聞くけど、あまりpythonは聞かない
+          <div class="caution">案外文献が少ない</div>
         </section>
 
         <section class="step">
           <h1 class="title">pycharm</h1>
 	  Googleの松尾氏も推奨してたよ。
+          <div class="caution">まぁ優秀だけど有料なのよねー</div>
         </section>
       </section>
 
-      <section class="step">
-        <img src="images/think.jpg">
+      <section class="step" style="background: url(images/think.jpg) no-repeat; background-size:cover;">
+      <p class="centered" style="color:white;font-family:VLPGothic;text-align:left;">
+      結局ナニを使うの？
+      </p>
+      <div class="notes">みんなだいたいわかってきたかな？</div>
       </section>
 
-      <section class="step">
-        <img src="images/vim.jpg">
+      <section class="step" style="background: url(images/vim.jpg) no-repeat; background-size:cover;">
+      <p class="centered" style="color:white;font-family:VLPGothic;font-size:78px;text-align:center;text-indent:-200px;">
+      『Vim』でしょ！
+      </p>
       </section>
 
       <section class="step" id="TruesTitle">
         <h1>Vimで作るPython開発環境</h1>
-        <h2>(GoogleAppEngine)</h2>
+        <h2>これが正式なタイトル</h2>
         <div class="footer">
         2013/04/13 Shizuoka.py
         secondarykey
@@ -236,36 +259,27 @@
       </section>
 
       <section class="step">
-      <p class="centered">
-      なぜVimを選択したか？
-      </p>
+        <h1>なぜVimを選択したか？</h1>
+	<h2>Shizuoka.pyの話が出始めた頃のお話</h2>
+                <img src="images/kzfm.jpg" />
+        <div class="notes">まじですかっつД｀)</div>
       </section>
 
       <section class="step">
-      <p class="centered">
-      @kzfmに年明けくらいに
-      軽めの用意しておきますと言ったら
-      </p>
+        <h1>実際に大事なことは・・・</h1>
+        <p class="centered">
+	開発効率を極限まで上げることが
+	開発スピードを極限に上げることにつながる
+        </p>
+	<div class="notes">実はVimであるかは重要ではないのだヽ(`Д´)ﾉ</div>
       </section>
 
       <section class="step">
-      <p class="centered">
-      「ヘヴィなネタをよろしく」と言われたから。
-      </p>
-      <div class="notes">まじですかっつД｀)</div>
-      </section>
-
-      <section class="step">
-      <p class="centered">
-      まぁさくっと書くのがスクリプト言語の良さですよねー
-      </p>
-      </section>
-
-      <section class="step">
-      <p class="centered">
-      まずGentooLinuxをインストールします。
-      </p>
-      <div class="notes">Windows環境は少しやりづらいかも</div>
+        <h1>ということで</h1>
+        <p class="centered">
+        GentooLinuxをインストールします。
+        </p>
+        <div class="caution">てめぇはウブンツゥじゃねーかとの声が！</div>
       </section>
 
       <section class="step">
@@ -274,7 +288,7 @@
 	<li>.vimrc</li>
 	<li>.vim</li>
 	</ul>
-        <div class="notes">Windows環境は少しやりづらいかも</div>
+        <div class="notes">.vimはディレクトリです。</div>
       </section>
 
       <section class="step">
@@ -286,6 +300,7 @@
 
       <section class="step">
         <h1 class="title">プロジェクト作成</h1>
+        <h2>Kay Frameworkのコマンドです</h2>
       </section>
 
       <section class="step">
@@ -303,10 +318,10 @@
 拡張子に反応するようにする
 「.vimproject」を開いた場合に「:Project」を行わなくてよくする
 <div class="command">
-filetype on¬
-filetype plugin on¬
-filetype indent on¬
-au BufRead,BufNewFile *.vimproject set filetype=project
+  filetype on¬
+  filetype plugin on¬
+  filetype indent on¬
+  au BufRead,BufNewFile *.vimproject set filetype=project
 </div>
 <div class="command">
 Project %
@@ -348,20 +363,11 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"¬
       </section>
 
       <section class="step">
-        <h1>大事なことは</h1>
-        <p class="centered">
-	開発効率を極限まで上げることが
-	開発スピードを極限に上げることにつながる
-        </p>
-	<div class="notes">Vimであるかは重要ではないのだヽ(`Д´)ﾉ</div>
-      </section>
-
-      <section class="step">
         <h1>May the Source be with you.</h1>
-	<h2>ご清聴ありがとうございました</h2>
         <p class="centered">
-	質問と宴会のご用命を承ります。
+	ご清聴ありがとうございました
         </p>
+	<div class="notes">質問と宴会のご用命を承ります</div>
       </section>
 
     </div>

@@ -7,8 +7,6 @@
   src: url('./SourceCodePro-Black.ttf') format('truetype');
 }
 
-
-
 /** GENERAL **/
 body {
 	font-family:SourceCode,VLPGothic,'メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
@@ -82,7 +80,8 @@ p.centered {
   top: 40%;
   margin-top: -50px;
   padding-right: 50px;
-  font-size: 36px;
+  font-size: 48px;
+  font-weight:bold;
 }
 
 /** フッター **/
@@ -112,9 +111,9 @@ p.centered {
     border-radius: 5px;
 
     color: #0f0;
-
     margin:0 0 0 100;
 }
+
 
 /** 箇条書き **/
 ul {
@@ -132,9 +131,9 @@ li {
 /** 箇条書き注釈 **/
 ul li div.notes {
 	font-size: 20px;
-    color: #00a;
-    margin:0 0 0 0;
-    font-weight:bold;
+	color: #00a;
+	margin:0 0 0 0;
+	font-weight:bold;
 }
 /** 箇条書き注意 **/
 ul li div.caution {
