@@ -51,6 +51,7 @@
       <section class="step">
       <p class="centered">
       そんな私に白羽の矢がっ！
+      <img src="images/knee.jpg">
       </p>
       </section>
 
@@ -118,9 +119,13 @@
       <section class="step">
         <h1>Python2.7について</h1>
 	<ul>
-	<li>マルチスレッド、並列リクエストになりました。</li>
+	<li>マルチスレッド、並列リクエストになりました
+	<div class="notes">スレッドセーフであるかが重要</div>
+	</li>
 	<li>Pythonバイトコードのアップロード</li>
-	<li>ネイティブJSONが可能になりました。</li>
+	<li>ネイティブJSONが可能になりました。
+	<div class="notes">import jsonで可能に</div>
+	</li>
 	<li>CGIのみからWSGI推奨</li>
 	</ul>
       </section>
@@ -132,7 +137,7 @@
 	  ├── app.yaml
 	  └── main.py
 
-<div class="command"
+<div class="command">
   class HelloWebapp2(webapp2.RequestHandler):
 
     def get(self):
@@ -141,7 +146,6 @@
   app = webapp2.WSGIApplication([
         ('/',HelloWebapp2),
         ],debug=True)
-
 </div>
       </section>
 
@@ -197,7 +201,7 @@
       </section>
 
       <section class="step">
-        <h1>さて本題の開発環境を考えてみましょう</h1>
+        <img src="images/develop.jpg">
         <div class="caution"></div>
         <section class="step">
           <h1 class="title">eclipse</h1>
@@ -215,11 +219,11 @@
       </section>
 
       <section class="step">
-        <h1>「じゃー何で書いたらいいの？」</h1>
+        <img src="images/think.jpg">
       </section>
 
       <section class="step">
-        <h1>「『vim』でしょ！」</h1>
+        <img src="images/vim.jpg">
       </section>
 
       <section class="step" id="TruesTitle">
@@ -239,25 +243,29 @@
 
       <section class="step">
       <p class="centered">
-      @kzfmに「ヘヴィなネタをよろしく」と言われたから。
+      @kzfmに年明けくらいに
+      軽めの用意しておきますと言ったら
       </p>
       </section>
 
       <section class="step">
       <p class="centered">
-      まぁ冗談はさておき。
+      「ヘヴィなネタをよろしく」と言われたから。
+      </p>
+      <div class="notes">まじですかっつД｀)</div>
+      </section>
+
+      <section class="step">
+      <p class="centered">
+      まぁさくっと書くのがスクリプト言語の良さですよねー
       </p>
       </section>
 
       <section class="step">
       <p class="centered">
-      軽く書くのがスクリプト言語の良さかもねー
+      まずGentooLinuxをインストールします。
       </p>
-      </section>
-
-      <section class="step">
-        <h1>まずはGentooをインストール</h1>
-        冗談だけど、Windows環境は少しやりづらいかも。
+      <div class="notes">Windows環境は少しやりづらいかも</div>
       </section>
 
       <section class="step">
@@ -266,41 +274,43 @@
 	<li>.vimrc</li>
 	<li>.vim</li>
 	</ul>
+        <div class="notes">Windows環境は少しやりづらいかも</div>
       </section>
 
       <section class="step">
         <h1>Vundleのインストール</h1>
 	githubにあるvimを取ってくる仕組み
 	<div class="command">:BundleInstall</div>
-	NeoBundleもあるよ
+	<div class="notes">NeoBundleもあるよ</div>
       </section>
 
       <section class="step">
         <h1 class="title">プロジェクト作成</h1>
-        新しいコマンドを作る
       </section>
 
       <section class="step">
         <h1 class="title">プロジェクト管理</h1>
         <h2>Project.vim</h2>
+「:Project」で動作
+「\C」でプロジェクトを初期化してくれる
 	<div class="command">
-	「:Project」で動作
-	「\C」でプロジェクトを初期化してくれる
 	</div>
       </section>
 
       <section class="step">
         <h1 class="title">拡張子に応じた設定</h1>
         <h2>ftplugin</h2>
-	拡張子に反応するようにする
-	「.vimproject」を開いた場合に「:Project」を行わなくてよくする
+拡張子に反応するようにする
+「.vimproject」を開いた場合に「:Project」を行わなくてよくする
+<div class="command">
 filetype on¬
 filetype plugin on¬
 filetype indent on¬
 au BufRead,BufNewFile *.vimproject set filetype=project
-	<div class="command">
-	Project %
-	</div>
+</div>
+<div class="command">
+Project %
+</div>
       </section>
 
       <section class="step">
@@ -315,8 +325,8 @@ au BufRead,BufNewFile *.vimproject set filetype=project
         <h1 class="title">インテリセンス</h1>
 	<h2>Shougo/neocomplcache</h2>
 	<div class="command">
-	 let g:neocomplcache_enable_at_startup = 1 
-	 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"¬
+let g:neocomplcache_enable_at_startup = 1 
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"¬
 	</div>
       </section>
 
@@ -338,19 +348,20 @@ au BufRead,BufNewFile *.vimproject set filetype=project
       </section>
 
       <section class="step">
-        <h1 class="title">開発環境をいじるということ</h1>
+        <h1>大事なことは</h1>
         <p class="centered">
 	開発効率を極限まで上げることが
-	開発スピードを極限に上げることにつながるかと
+	開発スピードを極限に上げることにつながる
         </p>
+	<div class="notes">Vimであるかは重要ではないのだヽ(`Д´)ﾉ</div>
       </section>
 
       <section class="step">
-        <h1>最後に。。。</h1>
-        <h2></h2>
-        <div class="footer">
-        May the Source be with You.
-        </div>
+        <h1>May the Source be with you.</h1>
+	<h2>ご清聴ありがとうございました</h2>
+        <p class="centered">
+	質問と宴会のご用命を承ります。
+        </p>
       </section>
 
     </div>
