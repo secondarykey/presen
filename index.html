@@ -24,6 +24,7 @@
 
       <section class="step">
         <h1>自己紹介</h1>
+
         <ul>
           <li>Twitter：secondarykey</li>
           <li>GitHub ：secondarykey</li>
@@ -38,7 +39,7 @@
       <p class="centered">
       本日は懇親会を予約いただき
       ありがとうございます
-      日本酒を用意してお待ちしております。
+      日本酒を用意してお待ちしております
       <div class="caution">準備のため１６時にはあがります</div>
       </p>
       </section>
@@ -53,7 +54,7 @@
       <section class="step">
       <p class="centered">
       こんなときになんですが
-      私はどちらかというとコンパイル言語が好きです。
+      私はどちらかというとコンパイル言語が好きです
       </p>
       <div class="notes">C++,C#,Javaなど</div>
       </section>
@@ -76,7 +77,8 @@
 
       <section class="step">
         <h1>さてGoogleAppEngineの特徴です</h1>
-        <h2>GoogleのPaaS環境</h2>
+        <h2>Google Cloud PlatformのPaaS環境</h2>
+
         <ul>
           <li>サーバ管理しなくて良い</li>
           <li>課金分スケールしてくれる</li>
@@ -86,20 +88,21 @@
 
       <section class="step">
         <p class="centered">
-        で何が楽しいの？
+        GAEの何が楽しいの？
         </p>
       </section>
 
       <section class="step">
         <h1>技術者だから！</h1>
         <h2>縛られるのが快感！</h2>
+
         <ul>
           <li>RDBじゃない！</li>
           <li>CPUの使い方！</li>
-          <li>ファイルが使えない！※</li>
+	  <li>ファイルが使えない！<p class="notes">※現在はファイルシステムライクに書ける</p></li>
           <li>どうやってお金を浮かすか！</li>
         </ul>
-        <div class="notes">※現在はファイルシステムライクに書ける</div>
+
       </section>
 
       <section class="step">
@@ -111,6 +114,7 @@
 
       <section class="step">
         <h1>使える言語</h1>
+
         <ul>
           <li>Java</li>
           <li>Go</li>
@@ -128,14 +132,11 @@
       <section class="step">
         <h1>Python2.7について</h1>
         <h2>SDK1.6.0辺りから対応</h2>
+
 	<ul>
-	<li>マルチスレッド、並列リクエストになりました
-	<div class="notes">スレッドを意識できる</div>
-	</li>
+	<li>マルチスレッド、並列リクエストになりました<p class="notes">スレッドを意識する必要あり</p> </li>
 	<li>Pythonバイトコードのアップロード</li>
-	<li>ネイティブJSONが可能になりました。
-	<div class="notes">import jsonで可能に</div>
-	</li>
+	<li>ネイティブJSONが可能になりました<p class="notes">import jsonで可能に</p> </li>
 	<li>CGIのみからWSGI推奨</li>
 	</ul>
       </section>
@@ -162,6 +163,7 @@
       <section>
         <h1>app.yaml</h1>
 	<h2>GAEアプリケーションの設定</h2>
+
 <div class="command">
   application: python
   version: 1
@@ -183,7 +185,8 @@
 python dev_appserver.py ./
 
 </div>
-<div class="notes">localhost:8080で動作します。<div>
+
+<div class="notes">localhost:8080で動作します<div>
       </section>
 
       <section>
@@ -230,7 +233,7 @@ python appcfg.py update ./
 
         <section class="step">
           <h1 class="title">pycharm</h1>
-	  Googleの松尾氏も推奨してたよ。
+	  Googleの松尾氏も推奨してたよ
           <div class="caution">まぁ優秀だけど有料なのよねー</div>
         </section>
       </section>
@@ -276,18 +279,19 @@ python appcfg.py update ./
       <section class="step">
         <h1>ということで</h1>
         <p class="centered">
-        GentooLinuxをインストールします。
+        GentooLinuxをインストールします
         </p>
         <div class="caution">てめぇはウブンツゥじゃねーかとの声が！</div>
       </section>
 
       <section class="step">
         <h1>Vimの基本構成</h1>
+
 	<ul>
 	<li>.vimrc</li>
 	<li>.vim</li>
 	</ul>
-        <div class="notes">.vimはディレクトリです。</div>
+        <div class="notes">.vimはディレクトリです</div>
       </section>
 
       <section class="step">

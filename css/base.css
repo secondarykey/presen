@@ -1,63 +1,18 @@
 @font-face {
-  font-family: 'VLPGothic';
-  src: url('./VL-PGothic-Regular.ttf') format('truetype');
+	font-family: 'VLPGothic';
+	src: url('./VL-PGothic-Regular.ttf') format('truetype');
 }
 @font-face {
-  font-family: 'SourceCode';
-  src: url('./SourceCodePro-Black.ttf') format('truetype');
+	font-family: 'SourceCode';
+	src: url('./SourceCodePro-Black.ttf') format('truetype');
 }
 
-/** GENERAL **/
 body {
-	font-family:SourceCode,VLPGothic,'メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+	font-family:SourceCode,VLPGothic,sans-serif;
 	min-height: 740px;
 	background-color: #ddd;
 }
 
-
-#jmpress {
-	opacity: 1;
-
-	-webkit-transition: 0.5s;
-	-moz-transition:    0.5s;
-	-ms-transition:     0.5s;
-	-o-transition:      0.5s;
-	transition:         0.5s;
-}
-
-/** STEP STYLES **/
-section {
-	white-space : pre;
-	width: 900px;
-    height: 600px;
-	font-size: 28px;
-	min-height: 500px;
-	background-color: white;
-
-	display: block;
-    border-radius: 10px;
-
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-    border: 1px solid rgba(0, 0, 0, .3);
-
-    color: rgb(102, 102, 102);
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
-
-    letter-spacing: -1px;
-
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
-	-ms-box-sizing:     border-box;
-	-o-box-sizing:      border-box;
-	box-sizing:         border-box;
-
-	-webkit-transition: opacity 1s;
-	-moz-transition:    opacity 1s;
-	-ms-transition:     opacity 1s;
-	-o-transition:      opacity 1s;
-	transition:         opacity 1s;
-}
-/** タイトル **/
 h1 {
 	display:inline;
 	font-size: 48px;
@@ -79,17 +34,17 @@ p.centered {
   position: fixed;
   top: 40%;
   margin-top: -50px;
-  padding-right: 50px;
-  font-size: 48px;
+  padding-right: 20px;
+  font-size: 32px;
   font-weight:bold;
 }
 
 /** フッター **/
-.footer {
+div.footer {
 	width:99%;
 	clear: both;
 	font-size: 24px;
-    color: #777;
+	color: #777;
 	bottom:0%;
 	position: fixed;
 	padding-top: 5px;
@@ -101,25 +56,22 @@ p.centered {
 }
 
 /** コマンド記述 **/
-.command {
+div.command {
 	white-space : pre;
 	width: 700px;
 	font-size: 24px;
 	background-color: black;
 
 	border-top:20px gray solid;
-    border-radius: 5px;
-
-    color: #0f0;
-    margin:0 0 0 100;
+	border-radius: 5px;
+	color: #0f0;
+	margin:0 0 0 100;
 }
 
-
-/** 箇条書き **/
 ul {
 	white-space : normal;
 	list-style-type: square;
-    margin:-30 0 0 80;
+	margin:-30 0 0 80;
 	font-size: 32px;
 }
 
@@ -128,26 +80,10 @@ li {
 	font-size: 32px;
 }
 
-/** 箇条書き注釈 **/
-ul li div.notes {
-	font-size: 20px;
-	color: #00a;
-	margin:0 0 0 0;
-	font-weight:bold;
-}
-/** 箇条書き注意 **/
-ul li div.caution {
-	font-size: 20px;
-    color: #a00;
-    margin:0 0 0 0;
-    font-weight:bold;
-}
-
-/** 画像 **/
 img {
 	padding:20 0 0 50;
 	float: left;
-    margin-right:40px;
+	margin-right:40px;
 }
 
 /** 画像箇条書き **/
@@ -162,13 +98,11 @@ ul.image li {
 	font-size: 24px;
 }
 
-/** 注釈 **/
 div.notes {
 	font-size: 32px;
-    color: #00a;
-    margin:50 50 30 60;
-    font-weight:bold;
-
+	color: #00a;
+	margin:50 50 30 60;
+	font-weight:bold;
 	clear: both;
 	bottom:0%;
 	position: fixed;
@@ -176,18 +110,84 @@ div.notes {
 	padding-bottom: 0px;
 }
 
-/** 注意 **/
 div.caution {
 	font-size: 32px;
-    color: #a00;
-    margin:50 50 30 60;
-    font-weight:bold;
-
+	color: #a00;
+	margin:50 50 30 60;
+	font-weight:bold;
 	clear: both;
 	bottom:0%;
 	position: fixed;
 	padding-top: 5px;
 	padding-bottom: 0px;
+}
+
+ul li p.notes {
+	font-size: 20px;
+	color: #00a;
+	margin:0 0 0 0;
+	font-weight:bold;
+	color: #00a;
+}
+ul li p.caution {
+	font-size: 20px;
+	color: #a00;
+	margin:0 0 0 0;
+	font-weight:bold;
+	color: #a00;
+}
+
+
+
+
+
+
+
+
+
+
+/** jmpress **/
+#jmpress {
+	opacity: 1;
+
+	-webkit-transition: 0.5s;
+	-moz-transition:    0.5s;
+	-ms-transition:     0.5s;
+	-o-transition:      0.5s;
+	transition:         0.5s;
+}
+
+/** STEP STYLES **/
+section {
+	white-space : pre;
+	width: 900px;
+	height: 600px;
+	font-size: 28px;
+	min-height: 500px;
+	background-color: white;
+
+	display: block;
+	border-radius: 10px;
+
+	box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+	border: 1px solid rgba(0, 0, 0, .3);
+
+	color: rgb(102, 102, 102);
+	text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+	letter-spacing: -1px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	-ms-box-sizing:     border-box;
+	-o-box-sizing:      border-box;
+	box-sizing:         border-box;
+
+	-webkit-transition: opacity 1s;
+	-moz-transition:    opacity 1s;
+	-ms-transition:     opacity 1s;
+	-o-transition:      opacity 1s;
+	transition:         opacity 1s;
 }
 
 /** NOT SUPPORTED STYLES **/
