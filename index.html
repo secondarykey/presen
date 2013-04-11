@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title>GoogleAppEngine Python</title>
+    <title>Try not.Do or do not.</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link href="./css/base.css" rel="stylesheet" type="text/css" />
 
@@ -41,6 +41,23 @@
       ありがとうございます
       日本酒を用意してお待ちしております
       <div class="caution">準備のため１６時にはあがります</div>
+      </p>
+      </section>
+
+      <section class="step">
+      <p class="centered">
+      本日の衣装もNO TARGETにある服ですので
+      気に入っていただけたのでしたら
+      ぜひお待ちしております
+      <div class="caution">本日のタイトルを選んだ理由です</div>
+      </p>
+      </section>
+
+      <section class="step">
+      <p class="centered">
+      ただ実際「やってみる」というよりかは
+      「やるかやらないか」という方が正しいかと！
+      <div class="notes">みなさんも発表してみたら違う世界が見えるかも</div>
       </p>
       </section>
 
@@ -117,16 +134,13 @@
 
         <ul>
 <li>
-Python
-<div class="notes">小規模な開発</div>
+Python <p class="notes">小規模な開発</p>
 </li>
 <li>
-Java
-<div class="notes">大規模な開発</div>
+Java <p class="notes">大規模な開発</p>
 </li>
 <li>
-Go
-<div class="notes">CPUを使うようなアプリ</div>
+Go <p class="notes">CPUを使うようなアプリ</p>
 </li>
         </ul>
 
@@ -356,6 +370,7 @@ python manage.py startapp myapp
 
 </div>
 
+	<div class="notes">Kay Frameworkの説明はここまで</div>
       </section>
 
       <section class="step">
@@ -364,22 +379,27 @@ python manage.py startapp myapp
         <p class="centered">
 	ツリー表示でプロジェクトを見ることが可能です
         </p>
+
+	<div class="notes">少しデモをお見せします</div>
       </section>
 
       <section class="step">
         <h1 class="title">拡張子に応じた設定</h1>
         <h2>ftplugin</h2>
-拡張子に反応するようにする
-「.vimproject」を開いた場合に「:Project」を行わなくてよくする
+
 <div class="command">
   filetype on¬
   filetype plugin on¬
   filetype indent on¬
   au BufRead,BufNewFile *.vimproject set filetype=project
+
 </div>
+
 <div class="command">
   # Project %
+
 </div>
+	<div class="notes">各拡張子で挙動を変更できます</div>
       </section>
 
       <section class="step">
@@ -401,31 +421,36 @@ python manage.py startapp myapp
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"¬
 
 </div>
+
+	<div class="notes">パスを通しておくと説明が出てくる</div>
       </section>
 
       <section class="step">
         <h1 class="title">git</h1>
 	<h2>motemen/git-vim</h2>
 	<ul>
-	<Leader>gd: git diff {編集中ファイル}
-	<Leader>gD: git diff --cached {編集中ファイル}
-	<Leader>gs: git status {編集中ファイル}
-	<Leader>gl: git log {編集中ファイル}
-	<Leader>ga: git add {編集中ファイル}
-	<Leader>gA: git add {カーソル下にある文字列が指すファイル}
-	<Leader>gc: git commit {編集中ファイル}
-	<Leader>gp: git pull --rebase {編集中ファイル
+		<li>&lt;Leader&gt;gd=git diff</li>
+		<li>&lt;Leader&gt;gs=git status</li>
+		<li>&lt;Leader&gt;ga=git add</li> 
+		<li>&lt;Leader&gt;gc=git commit</li>
+		<li>&lt;Leader&gt;gp=git pull --rebase</li>
 	</ul>
 	<div class="notes">gist連携(mattn/gist-vim)とかもある</div>
       </section>
 
       <section class="step">
         <h1 class="title">単体テスト</h1>
-        vim-makegreen 
+	<h2>vim-makegreen</h2>
       </section>
 
       <section class="step">
         <h1 class="title">GAE周り</h1>
+        <p class="centered">
+	いろいろあるのですが
+	KayFrameworkとの連携を考えると
+	少し使い勝手が悪いかも
+        </p>
+	<div class="notes">その辺をツール化したりすると面白そう</div>
       </section>
 
       <section class="step">
