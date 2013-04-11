@@ -14,9 +14,9 @@
     <div id="jmpress" data-template="auto">
 
       <section class="step" style="background: url(images/title.jpg) no-repeat; background-size:cover;">
-        <h1>Try not. Do or do not.</h1>
-        <h2>GAE4P 開発環境のお話</h2>
-        <div class="footer">
+        <h1 class="opening">Try not. Do or do not.</h1>
+        <h2 class="opening">GAE4P 開発環境のお話</h2>
+        <div class="footer opening">
         2013/04/13 Shizuoka.py
         secondarykey
         </div>
@@ -47,7 +47,7 @@
       <section class="step">
       <p class="centered">
       まぁバーテンをやっているので
-      サーバ管理のいらないGAEは最適ですよねー
+      サーバ管理のいらないGAEは最適ですよね
       </p>
       </section>
 
@@ -147,7 +147,6 @@
 	(myapp)
 	  ├── app.yaml
 	  └── main.py
-
 <div class="command">
   class HelloWebapp2(webapp2.RequestHandler):
 
@@ -157,6 +156,7 @@
   app = webapp2.WSGIApplication([
         ('/',HelloWebapp2),
         ],debug=True)
+
 </div>
       </section>
 
@@ -174,6 +174,7 @@
   handlers:¬
   - url: /.*¬
     script: main.app¬
+
 </div>
       </section>
 
@@ -182,11 +183,11 @@
 	<h2>ローカルで挙動を確認</h2>
 
 <div class="command">
-python dev_appserver.py ./
+  # python dev_appserver.py ./
 
 </div>
 
-<div class="notes">localhost:8080で動作します<div>
+<div class="notes">localhost:8080で動作します</div>
       </section>
 
       <section>
@@ -194,7 +195,7 @@ python dev_appserver.py ./
 	<h2>ローカルで挙動を確認</h2>
 
 <div class="command">
-python appcfg.py update ./
+  # python appcfg.py update ./
 
 </div>
 
@@ -203,8 +204,17 @@ python appcfg.py update ./
 
       <section class="step">
         <h1 class="title">これはWebApp2というフレームワーク</h1>
-        <h2>使えるフレームワークはいろいろ</h2>
-        http://goo.gl/KDqdz
+        <h2>使えるフレームワーク(ライブラリ)はいろいろ</h2>
+
+	<ul>
+	<li>webapp2</li>
+	<li>django</li>
+	<li>yaml</li>
+	<li>jinja2</li>
+	<li>lxml markupsafe matplotlib numpy PIL PyAMF</li>
+	<li>pycrypto setuptools webob</li>
+	</ul>
+        <div class="notes">案外知らないのが多い(T_T)</div>
       </section>
 
       <section class="step">
@@ -222,20 +232,25 @@ python appcfg.py update ./
       </p>
         <section class="step">
           <h1 class="title">eclipse</h1>
+	  <h2>おなじみの</h2>
 	  PyDevを利用して開発環境を構築
-          <div class="caution">まぁ重いですよねー</div>
-        </section>
-        <section class="step">
-          <h1 class="title">netbeans</h1>
-	  Rubyはよく聞くけど、あまりpythonは聞かない
-          <div class="caution">案外文献が少ない</div>
+          <div class="caution">まぁ重いですよね</div>
         </section>
 
         <section class="step">
           <h1 class="title">pycharm</h1>
+	  <h2>今輝くJetBrainsのIDE</h2>
 	  Googleの松尾氏も推奨してたよ
-          <div class="caution">まぁ優秀だけど有料なのよねー</div>
+          <div class="caution">まぁ優秀だけど有料なのよね</div>
         </section>
+
+        <section class="step">
+          <h1 class="title">VisualStudio</h1>
+	  <h2>意外かもしれませんがあります！</h2>
+	  
+          <div class="caution">これが一番優秀かなー</div>
+        </section>
+
       </section>
 
       <section class="step" style="background: url(images/think.jpg) no-repeat; background-size:cover;">
@@ -246,7 +261,7 @@ python appcfg.py update ./
       </section>
 
       <section class="step" style="background: url(images/vim.jpg) no-repeat; background-size:cover;">
-      <p class="centered" style="color:white;font-family:VLPGothic;font-size:78px;text-align:center;text-indent:-200px;">
+      <p class="centered" style="color:white;font-family:VLPGothic;font-size:78px;text-align:left;text-indent:100px;">
       『Vim』でしょ！
       </p>
       </section>
@@ -285,34 +300,67 @@ python appcfg.py update ./
       </section>
 
       <section class="step">
-        <h1>Vimの基本構成</h1>
+        <h1>Vimを設定する基本構成</h1>
 
+	.vimrc
+	.vim
+	  ├── bundle
+	  │   └── xxxxxx
+	  │       └── xxxx 
+	  ├── ftplugin
+	  │   └── python.vim
+	  └── plugin
+	      └── xxx.vim 
+
+        <div class="notes">bundleについては後述</div>
+      </section>
+      <section class="step">
+        <h1>各種設定</h1>
+	<h2>いろいろあるよ</h2>
 	<ul>
-	<li>.vimrc</li>
-	<li>.vim</li>
+	<li>カーソルラインの表示</li>
+	<li>行数の表示</li>
+	<li>タブ文字の表示</li>
+	<li>etc</li>
 	</ul>
-        <div class="notes">.vimはディレクトリです</div>
       </section>
 
       <section class="step">
         <h1>Vundleのインストール</h1>
-	githubにあるvimを取ってくる仕組み
-	<div class="command">:BundleInstall</div>
-	<div class="notes">NeoBundleもあるよ</div>
+	<h2>githubにあるvimを取ってくる仕組み</h2>
+
+<div class="command">
+  set nocompatible
+  filetype off
+  set rtp+=~/.vim/bundle/vundle
+  call vundle#rc()
+
+</div>
+<div class="command">
+  :BundleInstall
+
+</div>
+	<div class="notes">NeoBundleってのもある</div>
       </section>
 
       <section class="step">
         <h1 class="title">プロジェクト作成</h1>
-        <h2>Kay Frameworkのコマンドです</h2>
+        <h2>これはKay Frameworkのコマンドです</h2>
+
+<div class="command">
+python manage.py startproject shizuokapy
+python manage.py startapp shizuokapy
+
+</div>
+
       </section>
 
       <section class="step">
         <h1 class="title">プロジェクト管理</h1>
         <h2>Project.vim</h2>
-「:Project」で動作
-「\C」でプロジェクトを初期化してくれる
-	<div class="command">
-	</div>
+        <p class="centered">
+	ツリー表示でプロジェクトを見ることが可能です
+        </p>
       </section>
 
       <section class="step">
@@ -327,29 +375,53 @@ python appcfg.py update ./
   au BufRead,BufNewFile *.vimproject set filetype=project
 </div>
 <div class="command">
-Project %
+  # Project %
 </div>
       </section>
 
       <section class="step">
         <h1 class="title">インデント</h1>
-      indent-guids
-      https://github.com/nathanaelkane/vim-indent-guides
-      PEP8 の話
-      http://www.python.org/dev/peps/pep-0008/
+	<h2>PEP8のお話</h2>
+        http://www.python.org/dev/peps/pep-0008/
+<div class="command">
+setl tabstop=8¬
+setl softtabstop=4¬
+setl shiftwidth=4¬
+setl smarttab¬
+setl expandtab¬
+setl autoindent¬
+setl nosmartindent¬                                                         
+setl cindent¬
+setl textwidth=80¬
+setl colorcolumn=80¬
+
+</div>
+      <div class="notes">indent-guidsなどを有効に使おう</div>
       </section>
 
       <section class="step">
         <h1 class="title">インテリセンス</h1>
 	<h2>Shougo/neocomplcache</h2>
-	<div class="command">
-let g:neocomplcache_enable_at_startup = 1 
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"¬
-	</div>
+<div class="command">
+  let g:neocomplcache_enable_at_startup = 1 
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"¬
+
+</div>
       </section>
 
       <section class="step">
         <h1 class="title">git</h1>
+	<h2>motemen/git-vim</h2>
+
+	<Leader>gd: git diff {編集中ファイル}
+	<Leader>gD: git diff --cached {編集中ファイル}
+	<Leader>gs: git status {編集中ファイル}
+	<Leader>gl: git log {編集中ファイル}
+	<Leader>ga: git add {編集中ファイル}
+	<Leader>gA: git add {カーソル下にある文字列が指すファイル}
+	<Leader>gc: git commit {編集中ファイル}
+	<Leader>gp: git pull --rebase {編集中ファイル
+
       </section>
 
       <section class="step">
