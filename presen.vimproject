@@ -1,0 +1,16 @@
+
+presen=$HOME/git/presen CD=. filter="*" {
+ css=css{
+  LICENSE
+  SourceCodePro-Black.ttf
+  VL-PGothic-Regular.ttf
+  base.css
+ }
+ js=js{
+  base.js
+  jmpress.js
+  jquery-1.9.1.min.js
+ }
+ README.md
+ index.html
+}
