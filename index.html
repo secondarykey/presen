@@ -116,10 +116,21 @@
         <h1>使える言語</h1>
 
         <ul>
-          <li>Java</li>
-          <li>Go</li>
-          <li>Python</li>
+<li>
+Python
+<div class="notes">小規模な開発</div>
+</li>
+<li>
+Java
+<div class="notes">大規模な開発</div>
+</li>
+<li>
+Go
+<div class="notes">CPUを使うようなアプリ</div>
+</li>
         </ul>
+
+        <div class="caution">あくまで個人の感想です</div>
       </section>
 
       <section class="step">
@@ -292,19 +303,11 @@
       </section>
 
       <section class="step">
-        <h1>ということで</h1>
-        <p class="centered">
-        GentooLinuxをインストールします
-        </p>
-        <div class="caution">てめぇはウブンツゥじゃねーかとの声が！</div>
-      </section>
-
-      <section class="step">
         <h1>Vimを設定する基本構成</h1>
 
 	.vimrc
 	.vim
-	  ├── bundle
+	  ├── bundle ※
 	  │   └── xxxxxx
 	  │       └── xxxx 
 	  ├── ftplugin
@@ -312,7 +315,7 @@
 	  └── plugin
 	      └── xxx.vim 
 
-        <div class="notes">bundleについては後述</div>
+        <div class="notes">※bundleについては後述</div>
       </section>
       <section class="step">
         <h1>各種設定</h1>
@@ -348,8 +351,8 @@
         <h2>これはKay Frameworkのコマンドです</h2>
 
 <div class="command">
-python manage.py startproject shizuokapy
-python manage.py startapp shizuokapy
+python manage.py startproject myproject
+python manage.py startapp myapp
 
 </div>
 
@@ -380,24 +383,15 @@ python manage.py startapp shizuokapy
       </section>
 
       <section class="step">
-        <h1 class="title">インデント</h1>
-	<h2>PEP8のお話</h2>
-        http://www.python.org/dev/peps/pep-0008/
-<div class="command">
-setl tabstop=8¬
-setl softtabstop=4¬
-setl shiftwidth=4¬
-setl smarttab¬
-setl expandtab¬
-setl autoindent¬
-setl nosmartindent¬                                                         
-setl cindent¬
-setl textwidth=80¬
-setl colorcolumn=80¬
-
-</div>
-      <div class="notes">indent-guidsなどを有効に使おう</div>
-      </section>
+        <h1 class="title">インデントなどの構文チェック</h1>
+	<h2>PEP8(nvie/vim-flake8)</h2>
+	<ul>
+	<li>nathanaelkane/vim-indent-guides</li>
+	<li>nvie/vim-flake8</li>
+	<li>タブをなくしたりもできる</li>
+	</ul>
+	<div class="notes">いろいろあるので自分に合うものを</div>
+	</section>
 
       <section class="step">
         <h1 class="title">インテリセンス</h1>
@@ -412,7 +406,7 @@ setl colorcolumn=80¬
       <section class="step">
         <h1 class="title">git</h1>
 	<h2>motemen/git-vim</h2>
-
+	<ul>
 	<Leader>gd: git diff {編集中ファイル}
 	<Leader>gD: git diff --cached {編集中ファイル}
 	<Leader>gs: git status {編集中ファイル}
@@ -421,15 +415,12 @@ setl colorcolumn=80¬
 	<Leader>gA: git add {カーソル下にある文字列が指すファイル}
 	<Leader>gc: git commit {編集中ファイル}
 	<Leader>gp: git pull --rebase {編集中ファイル
-
+	</ul>
+	<div class="notes">gist連携(mattn/gist-vim)とかもある</div>
       </section>
 
       <section class="step">
-        <h1 class="title">gistと連携</h1>
-      </section>
-
-      <section class="step">
-        <h1 class="title">テスト</h1>
+        <h1 class="title">単体テスト</h1>
         vim-makegreen 
       </section>
 
