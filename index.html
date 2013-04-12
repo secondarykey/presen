@@ -28,7 +28,7 @@
         <ul>
           <li>Twitter：secondarykey</li>
           <li>GitHub ：secondarykey</li>
-          <li>所属：NO TARGET
+          <li>所属：NO TARGET</li>
           <li>勤務：PHOTO</li>
           <li>職業：バーテンダー</li>
         </ul>
@@ -39,26 +39,30 @@
       <p class="centered">
       本日は懇親会を予約いただき
       ありがとうございます
-      日本酒を用意してお待ちしております
-      <div class="caution">準備のため１６時にはあがります</div>
+      <div class="caution">準備のため終わったらあがります(_^_)</div>
       </p>
+      </section>
+
+      <section class="step">
+        <h1>本日のおしながき</h1>
+
+        <ul>
+          <li>ニース風サラダ</li>
+          <li>串物４品</li>
+          <li>太刀魚</li>
+          <li>焼きそばと炒飯</li>
+          <li>その他通常メニューより注文</li>
+        </ul>
+        <div class="notes">日本酒nechiと杉錦を準備しております</div>
       </section>
 
       <section class="step">
       <p class="centered">
       本日の衣装もNO TARGETにある服ですので
       気に入っていただけたのでしたら
-      ぜひお待ちしております
-      <div class="caution">本日のタイトルを選んだ理由です</div>
+      各店舗にお越しいただければと思います。
       </p>
-      </section>
-
-      <section class="step">
-      <p class="centered">
-      ただ実際「やってみる」というよりかは
-      「やるかやらないか」という方が正しいかと！
-      <div class="notes">みなさんも発表してみたら違う世界が見えるかも</div>
-      </p>
+      <div class="notes">※服に合わせてタイトルをSWにしました</div>
       </section>
 
       <section class="step">
@@ -89,7 +93,7 @@
           偶然にも苗字が「へびしま」
           偶然にも巳年生まれ(24歳)
         </p>
-        <div class="notes">まぁ率先して発表しようぜ精神です！</div>
+        <div class="notes">まぁこれも発表しようぜ精神です！</div>
       </section>
 
       <section class="step">
@@ -100,7 +104,7 @@
           <li>サーバ管理しなくて良い</li>
           <li>課金分スケールしてくれる</li>
         </ul>
-        <div class="notes">なによりGAEは楽しい！</div>
+        <div class="notes">なにより楽しい！</div>
       </section>
 
       <section class="step">
@@ -120,38 +124,34 @@
           <li>どうやってお金を浮かすか！</li>
         </ul>
 
-      </section>
-
-      <section class="step">
-        <p class="centered">
-	Googleさん油断すると進化しすぎ
-        </p>
         <div class="caution">最新のSDKでついにソケット対応したり</div>
       </section>
 
       <section class="step">
-        <h1>使える言語</h1>
+        <h1>使用できる言語</h1>
+        <h2>あくまで個人的なあれ</h2>
 
         <ul>
 <li>
-Python <p class="notes">小規模な開発</p>
+Python <p class="notes">小規模な開発。軽く作ったりする時</p>
 </li>
 <li>
-Java <p class="notes">大規模な開発</p>
+Java <p class="notes">大規模な開発※但し</p>
 </li>
 <li>
-Go <p class="notes">CPUを使うようなアプリ</p>
+Go <p class="notes">CPUを使うようなアプリ(軽量スレッディングができる)</p>
 </li>
+        <div class="notes">Slim3を使うとそうとも言えないので困る</div>
         </ul>
 
-        <div class="caution">あくまで個人の感想です</div>
       </section>
 
       <section class="step">
       <p class="centered">
-      インタプリタ慣れしている方は
+      まぁインタプリタ慣れしている方は
       PythonでGAEを初めてはいかが？
       </p>
+      <div class="notes">本当に簡単にWebサービスが作れます</div>
       </section>
 
       <section class="step">
@@ -246,6 +246,7 @@ Go <p class="notes">CPUを使うようなアプリ</p>
         <p class="centered">
         個人的にはDjangoがいいのですが、
         私は最適化されたKay Frameworkが好きです
+        WebApp2+Jinja2とかで十分かも
         </p>
         <div class="notes">まぁ好きなものを選びましょう！</div>
       </section>
@@ -404,10 +405,10 @@ python manage.py startapp myapp
 
       <section class="step">
         <h1 class="title">インデントなどの構文チェック</h1>
+
 	<h2>PEP8(nvie/vim-flake8)</h2>
 	<ul>
 	<li>nathanaelkane/vim-indent-guides</li>
-	<li>nvie/vim-flake8</li>
 	<li>タブをなくしたりもできる</li>
 	</ul>
 	<div class="notes">いろいろあるので自分に合うものを</div>
@@ -416,18 +417,20 @@ python manage.py startapp myapp
       <section class="step">
         <h1 class="title">インテリセンス</h1>
 	<h2>Shougo/neocomplcache</h2>
+	
 <div class="command">
   let g:neocomplcache_enable_at_startup = 1 
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"¬
 
 </div>
 
-	<div class="notes">パスを通しておくと説明が出てくる</div>
+	<div class="notes">キャッシュなども搭載</div>
       </section>
 
       <section class="step">
         <h1 class="title">git</h1>
 	<h2>motemen/git-vim</h2>
+
 	<ul>
 		<li>&lt;Leader&gt;gd=git diff</li>
 		<li>&lt;Leader&gt;gs=git status</li>
@@ -446,7 +449,7 @@ python manage.py startapp myapp
       <section class="step">
         <h1 class="title">GAE周り</h1>
         <p class="centered">
-	いろいろあるのですが
+	これについてもいろいろあるのですが
 	KayFrameworkとの連携を考えると
 	少し使い勝手が悪いかも
         </p>
